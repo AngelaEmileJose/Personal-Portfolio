@@ -51,7 +51,7 @@ export default function About() {
               complex accessible.
             </p>
             <p className="mb-4 font-serif italic text-lg leading-relaxed">
-              While my days are spent in Python and PyTorch, my soul is often found in the kitchen. I've been a lifelong
+              While my days are spent in code, my soul is often found in the kitchen. I've been a lifelong
               enthusiast of the culinary arts—from my early days of blogging at{" "}
               <a
                 href="https://cookwithemile.blogspot.com/"

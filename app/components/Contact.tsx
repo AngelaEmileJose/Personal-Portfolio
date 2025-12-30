@@ -17,12 +17,12 @@ export default function Contact() {
           Get In Touch
         </motion.h2>
 
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
+        <div className="max-w-2xl mx-auto">
           {/* Contact Information */}
           <motion.div
             className="space-y-8"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
@@ -88,65 +88,6 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-          </motion.div>
-
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-semibold mb-6 text-quaternary">Send a Message</h3>
-            <form className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-quaternary mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className="w-full px-4 py-2 bg-primary/50 border border-quaternary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-tertiary text-quaternary"
-                  placeholder="Your name"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-quaternary mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="w-full px-4 py-2 bg-primary/50 border border-quaternary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-tertiary text-quaternary"
-                  placeholder="your.email@example.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-quaternary mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  className="w-full px-4 py-2 bg-primary/50 border border-quaternary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-tertiary text-quaternary resize-none"
-                  placeholder="Your message..."
-                />
-              </div>
-
-              <motion.button
-                type="submit"
-                className="w-full bg-tertiary text-primary py-3 rounded-lg font-semibold hover:bg-tertiary/90 transition-colors"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Send Message
-              </motion.button>
-            </form>
           </motion.div>
         </div>
       </div>
