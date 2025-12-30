@@ -1,4 +1,7 @@
+"use client"
+
 import { Calendar, MapPin, Award } from "lucide-react"
+import { motion } from "framer-motion"
 
 export default function WorkExperience() {
   const experiences = [
@@ -76,12 +79,25 @@ export default function WorkExperience() {
   return (
     <section id="experience" className="py-20 bg-secondary">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold mb-12 text-center text-primary">Work Experience</h2>
+        <motion.h2
+          className="text-4xl font-bold mb-12 text-center text-primary"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          Work Experience
+        </motion.h2>
         <div className="max-w-4xl mx-auto space-y-8">
           {experiences.map((exp, index) => (
-            <div
+            <motion.div
               key={index}
               className="bg-quaternary rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow border-l-4 border-accent"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.02 }}
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div className="flex-1">
@@ -130,7 +146,7 @@ export default function WorkExperience() {
                   )}
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

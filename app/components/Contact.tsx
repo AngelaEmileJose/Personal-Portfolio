@@ -1,14 +1,31 @@
+"use client"
+
 import { Mail, MapPin, Phone, Github, Linkedin } from "lucide-react"
+import { motion } from "framer-motion"
 
 export default function Contact() {
   return (
     <section id="contact" className="py-20 bg-secondary">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-12 text-quaternary">Get In Touch</h2>
+        <motion.h2
+          className="text-4xl font-bold text-center mb-12 text-quaternary"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          Get In Touch
+        </motion.h2>
 
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <div className="space-y-8">
+          <motion.div
+            className="space-y-8"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <div>
               <h3 className="text-2xl font-semibold mb-6 text-quaternary">Contact Information</h3>
               <div className="space-y-4">
@@ -71,10 +88,15 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Contact Form */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             <h3 className="text-2xl font-semibold mb-6 text-quaternary">Send a Message</h3>
             <form className="space-y-4">
               <div>
@@ -116,14 +138,16 @@ export default function Contact() {
                 />
               </div>
 
-              <button
+              <motion.button
                 type="submit"
                 className="w-full bg-tertiary text-primary py-3 rounded-lg font-semibold hover:bg-tertiary/90 transition-colors"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 Send Message
-              </button>
+              </motion.button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

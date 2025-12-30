@@ -1,12 +1,29 @@
+"use client"
+
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 export default function About() {
   return (
     <section id="about" className="py-20 bg-primary text-quaternary">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-12 text-center">About Me</h2>
+        <motion.h2
+          className="text-3xl font-bold mb-12 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          About Me
+        </motion.h2>
         <div className="md:flex md:items-center">
-          <div className="md:w-1/3 mb-8 md:mb-0">
+          <motion.div
+            className="md:w-1/3 mb-8 md:mb-0"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <Image
               src="/about-photo.jpg"
               alt="Angela Emile Jose"
@@ -14,8 +31,14 @@ export default function About() {
               height={400}
               className="rounded-lg mx-auto object-cover"
             />
-          </div>
-          <div className="md:w-2/3 md:pl-12">
+          </motion.div>
+          <motion.div
+            className="md:w-2/3 md:pl-12"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             <p className="mb-4 font-serif italic text-lg leading-relaxed">
               I am Angela Emile Jose, a Computer Science student currently navigating a unique academic journey. Through
               a 2+2 Double Degree program, I've bridged my foundations at Christ University, India, with my senior-year
@@ -54,9 +77,9 @@ export default function About() {
               </a>
               .
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </section >
   )
 }

@@ -1,9 +1,10 @@
 "use client"
 import { useEffect } from "react"
+import { motion } from "framer-motion"
 
 export default function Header() {
   useEffect(() => {
-    const smoothScroll = (e: MouseEvent) => {
+    const smoothScroll = (e: Event) => {
       const target = e.target as HTMLAnchorElement
       if (target.hash) {
         e.preventDefault()
@@ -25,7 +26,12 @@ export default function Header() {
   }, [])
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-primary bg-opacity-90 text-quaternary">
+    <motion.header
+      className="fixed top-0 left-0 right-0 z-50 bg-primary bg-opacity-90 text-quaternary"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <nav className="container mx-auto px-6 py-4">
         <ul className="flex justify-center space-x-8">
           <li>
@@ -36,11 +42,6 @@ export default function Header() {
           <li>
             <a href="#projects" className="hover:text-tertiary transition-colors">
               Projects
-            </a>
-          </li>
-          <li>
-            <a href="#skills" className="hover:text-tertiary transition-colors">
-              Skills
             </a>
           </li>
           <li>
@@ -76,6 +77,6 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-    </header>
+    </motion.header>
   )
 }

@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { X } from "lucide-react"
+import { motion } from "framer-motion"
 
 interface HobbyGallery {
   title: string
@@ -16,7 +17,7 @@ interface HobbyGallery {
   }
   blogLink?: string
   gallery?: {
-    images: string[]
+    images?: string[]
     videos?: { title: string; url: string; description?: string }[]
   }
 }
@@ -269,13 +270,27 @@ export default function Hobbies() {
   return (
     <section id="hobbies" className="py-20 bg-tertiary">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-12 text-center text-primary">My Hobbies</h2>
+        <motion.h2
+          className="text-3xl font-bold mb-12 text-center text-primary"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          My Hobbies
+        </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {hobbies.map((hobby, index) => (
-            <button
+            <motion.button
               key={index}
               onClick={() => setSelectedHobby(hobby)}
               className="bg-white rounded-lg shadow-lg overflow-hidden group text-left hover:shadow-xl transition cursor-pointer"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
             >
               <div className="relative h-64 overflow-hidden">
                 <img
@@ -297,7 +312,7 @@ export default function Hobbies() {
                 )}
                 {!hobby.blogLink && <p className="text-sm text-accent mt-3 font-semibold">Click to view gallery →</p>}
               </div>
-            </button>
+            </motion.button>
           ))}
         </div>
       </div>
