@@ -5,8 +5,8 @@ import { motion } from "framer-motion"
 
 export default function Hero() {
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center bg-primary text-quaternary pt-20">
-      <div className="container mx-auto px-6 py-24 md:flex md:items-center">
+    <section id="hero" className="min-h-screen flex items-center justify-center bg-primary text-quaternary pt-16">
+      <div className="container mx-auto px-6 py-12 md:flex md:items-center">
         <motion.div
           className="md:w-1/2"
           initial={{ opacity: 0, y: 50 }}
