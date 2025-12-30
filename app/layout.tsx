@@ -2,9 +2,9 @@ import "./globals.css"
 import type React from "react" // Import React
 
 export const metadata = {
-  title: "Nathan Sterling - Web Developer & Designer",
+  title: "Angela Emile Jose - Computer Science Student & Researcher",
   description:
-    "Portfolio of Nathan Sterling, a professional web developer and designer specializing in modern, responsive web solutions.",
+    "Portfolio of Angela Emile Jose, a Computer Science student at Kyungpook National University specializing in software engineering, AI research, and web development.",
   generator: 'v0.app'
 }
 
