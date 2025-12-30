@@ -33,7 +33,7 @@ export default function Header() {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <nav className="container mx-auto px-3 py-3 md:px-6 md:py-4">
-        <ul className="flex flex-wrap justify-center items-center gap-2 md:gap-8 text-xs md:text-base">
+        <ul className="flex flex-wrap justify-center items-center gap-2 md:gap-8 text-xs md:text-lg">
           <li>
             <a href="#hero" className="hover:text-tertiary transition-colors whitespace-nowrap">
               Home
@@ -70,7 +70,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               download="Angela_Emile_Jose_Resume.pdf"
-              className="px-3 py-1 md:px-4 md:py-2 bg-tertiary text-primary rounded-lg hover:bg-quaternary transition-colors font-semibold whitespace-nowrap text-xs md:text-base"
+              className="px-3 py-1 md:px-4 md:py-2 bg-tertiary text-primary rounded-lg hover:bg-quaternary transition-colors font-semibold whitespace-nowrap text-xs md:text-lg"
             >
               Resume
             </a>
