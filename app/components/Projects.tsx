@@ -39,7 +39,7 @@ const projects = [
     image: "/knu-link.png",
     tags: ["Next.js 14", "TypeScript", "Tailwind CSS", "Supabase", "Vercel"],
     links: {
-      github: "https://github.com/AngelaEmileJose/knu-link",
+      github: "https://github.com/AngelaEmileJose/KNU-Link",
       demo: "https://knu-link.vercel.app/",
     },
   },
