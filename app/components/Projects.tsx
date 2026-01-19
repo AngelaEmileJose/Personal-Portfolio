@@ -32,6 +32,18 @@ const projects = [
     },
   },
   {
+    title: "KNU Link – Anonymous Social Discovery App",
+    date: "Jan 2026",
+    description:
+      "A social networking platform that helps university students connect through shared activities using a Tinder-style swipe interface. Built to create a low-pressure environment for introverts and newcomers to find like-minded peers through genuine shared interests rather than appearance or social status.",
+    image: "/knu-link.png",
+    tags: ["Next.js 14", "TypeScript", "Tailwind CSS", "Supabase", "Vercel"],
+    links: {
+      github: "https://github.com/AngelaEmileJose/knu-link",
+      demo: "https://knu-link.vercel.app/",
+    },
+  },
+  {
     title: "NutriFlow AI",
     date: "Nov 2025 - Dec 2025",
     description:
