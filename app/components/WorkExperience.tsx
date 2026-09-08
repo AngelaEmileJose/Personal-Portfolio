@@ -21,8 +21,8 @@ export default function WorkExperience() {
       title: "Mentor",
       company: "International Writing Center",
       location: "Daegu, South Korea",
-      period: "Jul 2025 - Present",
-      duration: "6 mos",
+      period: "Jul 2025 - Jul 2026",
+      duration: "1 yr",
       type: "On-site",
       description: [
         "Mentored a diverse group of students at KNU, providing tailored coaching in English writing and speaking to build their confidence in international academic settings",
