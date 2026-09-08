@@ -107,7 +107,7 @@ A huge thank you to the KNU Office of International Affairs for this recognition
     title: "Writing & Journalism",
     description:
       'Selected as one of only two international student contributors for the Spring 2026 KNU Times, I authored the article "Making Friends in Korea as a Foreign Student" to share my experience navigating cultural barriers and building a community on campus.',
-    image: "/international-cultural-exchange.jpg",
+    image: "/knu-times-cover.jpg",
     article: {
       title: "Making Friends in Korea as a Foreign Student",
       publication: "KNU Times (Issue 401)",
@@ -117,6 +117,7 @@ A huge thank you to the KNU Office of International Affairs for this recognition
     },
     gallery: {
       images: [
+        "/knu-times-cover.jpg",
         "/international-cultural-exchange.jpg",
         "/cultural-exchange-event.jpg",
         "/international-students-gathering.jpg",
