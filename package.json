@@ -8,6 +8,17 @@
     "lint": "eslint .",
     "start": "next start"
   },
+  "pnpm": {
+    "overrides": {
+      "motion-dom": "12.23.26"
+    }
+  },
+  "overrides": {
+    "motion-dom": "12.23.26"
+  },
+  "resolutions": {
+    "motion-dom": "12.23.26"
+  },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
     "@hookform/resolvers": "^3.10.0",
@@ -46,6 +57,7 @@
     "date-fns": "4.1.0",
     "embla-carousel-react": "8.5.1",
     "framer-motion": "12.23.26",
+    "motion-dom": "12.23.26",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
     "next": "15.5.9",
