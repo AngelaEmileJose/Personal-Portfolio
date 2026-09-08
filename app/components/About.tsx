@@ -42,19 +42,20 @@ export default function About() {
             viewport={{ once: true }}
           >
             <p className="mb-4 font-serif italic text-lg leading-relaxed text-[#163832]/90">
-              I am Angela Emile Jose, a Computer Science student currently navigating a unique academic journey. Through
-              a 2+2 Double Degree program, I've bridged my foundations at Christ University, India, with my senior-year
-              research at Kyungpook National University, South Korea.
+              I am Angela Emile Jose, a Computer Science graduate bridging formal engineering with human-centered design.
+              Through a 2+2 Double Degree program, I’ve grounded my foundation at Christ University, India, and elevated
+              my senior research at Kyungpook National University, South Korea (graduating August 2026).
             </p>
             <p className="mb-4 font-serif italic text-lg leading-relaxed text-[#163832]/90">
-              Moving across borders has taught me that technology, much like language, is a tool for connection. Whether
-              I'm translating complex C-specifications into formal logic at the SSE Lab or helping international
-              students find their voice at the International Writing Center, my goal is always the same: to make the
-              complex accessible.
+              Moving across borders has taught me that technology, much like language, is fundamentally a medium for
+              connection. Whether engineering AI pipelines across software verification, computational biology, medical
+              imaging, and industrial vision, or helping international peers articulate their ideas at the International
+              Writing Center, my mission remains constant: to democratize the complex and design systems that promote
+              societal equity.
             </p>
             <p className="mb-4 font-serif italic text-lg leading-relaxed text-[#163832]/90">
-              While my days are spent in code, my soul is often found in the kitchen. I've been a lifelong
-              enthusiast of the culinary arts—from my early days of blogging at{" "}
+              While my discipline is rooted in code, my creative impulse lives at the intersection of tangible media and
+              sensory design. A lifelong enthusiast of the culinary arts, my journey from blogging at{" "}
               <a
                 href="https://cookwithemile.blogspot.com/"
                 target="_blank"
@@ -63,21 +64,21 @@ export default function About() {
               >
                 Cook with Emile
               </a>{" "}
-              to experimenting with non-Indian cuisines here in Korea.
+              to exploring cuisines in Korea has shaped how I think about physical, interactive spaces.
             </p>
             <p className="font-serif italic text-lg leading-relaxed text-[#163832]/90">
-              One day, I dream of blending these two worlds: owning a cafe where technology meets the warmth of a
-              perfectly baked cake. Until then, you can find me exploring Daegu and documenting my life as a foreign
-              student on{" "}
+              My vision is to bridge these dimensions—merging system-level computing with multi-sensory, everyday human
+              experiences to build technologies that bring connection, warmth, and accessibility to public life. Until
+              then, I am documenting my cross-cultural journey in Daegu on{" "}
               <a
-                href="https://m.blog.naver.com/angela_blogs"
+                href="https://m.blog.naver.com/angela_blogs?tab=1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-[#163832] underline decoration-[#FCEF91] decoration-4 hover:bg-[#FCEF91] px-1 rounded transition-all"
               >
                 Naver Blog
-              </a>
-              .
+              </a>{" "}
+              and exploring how smart design can elevate human potential.
             </p>
           </motion.div>
         </div>
