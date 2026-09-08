@@ -16,7 +16,9 @@ interface Project {
     github?: string
     demo?: string
     paper?: string
+    paperLabel?: string
     certificate?: string
+    certificateLabel?: string
   }
 }
 
@@ -44,8 +46,10 @@ const projects: Project[] = [
     tags: ["YOLO11", "CLIP ViT-B/32", "InternVL 2.5-4B", "Gemini 3 Flash", "Multimodal VQA", "F2-Score: 0.833"],
     award: "Bronze / Excellent Paper Award (동상) · 2026 KIT Summer Comprehensive Academic Conference (제 26-178 호)",
     links: {
-      paper: "/fire-detection-paper.pdf",
-      certificate: "/fire-detection-award-certificate.pdf",
+      paper: "/fire-detection-certificate.pdf",
+      paperLabel: "Certificate",
+      certificate: "/fire-detection-copyright-certificate.pdf",
+      certificateLabel: "Copyright Registration Certificate",
     },
   },
   {
@@ -210,8 +214,12 @@ export default function Projects() {
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-1.5 text-xs font-bold text-[#163832] hover:text-[#0E5C4E] transition-colors"
                           >
-                            <FileText className="w-3.5 h-3.5" />
-                            <span>Research Paper</span>
+                            {project.links.paperLabel === "Certificate" ? (
+                              <Award className="w-3.5 h-3.5" />
+                            ) : (
+                              <FileText className="w-3.5 h-3.5" />
+                            )}
+                            <span>{project.links.paperLabel || "Research Paper"}</span>
                           </a>
                         )}
                         {project.links.certificate && (
@@ -222,7 +230,7 @@ export default function Projects() {
                             className="inline-flex items-center gap-1.5 text-xs font-bold text-[#163832] hover:text-[#0E5C4E] transition-colors"
                           >
                             <Award className="w-3.5 h-3.5" />
-                            <span>Certificate</span>
+                            <span>{project.links.certificateLabel || "Certificate"}</span>
                           </a>
                         )}
                       </div>
