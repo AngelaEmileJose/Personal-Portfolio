@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { Award, Sparkles, Code2, Brain } from "lucide-react"
+import { Sparkles, Code2, Brain } from "lucide-react"
 import { ParallaxContainer, ParallaxLayer } from "@/components/animations/MouseParallax"
 
 export default function Hero() {
@@ -115,22 +115,7 @@ export default function Hero() {
               </div>
             </ParallaxLayer>
 
-            {/* Foreground Floating Badge (factor 0.11 - highest parallax response) */}
-            <ParallaxLayer
-              factor={0.11}
-              factorY={0.09}
-              className="absolute -bottom-6 -left-4 sm:bottom-4 sm:-left-8 z-20"
-            >
-              <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/95 backdrop-blur-md text-[#163832] shadow-2xl border-2 border-[#FCEF91]">
-                <div className="p-2 rounded-lg bg-[#AEEBDC] text-[#163832]">
-                  <Award className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-[11px] font-bold uppercase tracking-wider text-[#25534A]">Award Winner</div>
-                  <div className="text-xs font-extrabold text-[#163832]">Grand Prize (대상) · KICS 2025</div>
-                </div>
-              </div>
-            </ParallaxLayer>
+
           </motion.div>
         </div>
       </ParallaxContainer>
