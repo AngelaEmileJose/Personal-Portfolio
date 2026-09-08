@@ -127,10 +127,6 @@ A huge thank you to the KNU Office of International Affairs for this recognition
     gallery: {
       images: [
         "/knu-times-cover.jpg",
-        "/international-cultural-exchange.jpg",
-        "/cultural-exchange-event.jpg",
-        "/international-students-gathering.jpg",
-        "/friends-from-different-cultures.jpg",
       ],
     },
   },
@@ -263,17 +259,17 @@ function GalleryModal({ hobby, onClose }: { hobby: HobbyGallery; onClose: () => 
 
         <div className="p-6">
           {activeTab === "images" && hobby.gallery?.images && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className={hobby.gallery.images.length === 1 ? "max-w-2xl mx-auto" : "grid grid-cols-1 md:grid-cols-2 gap-6"}>
               {hobby.gallery.images.map((image, index) => (
                 <button
                   key={index}
                   onClick={() => setSelectedImage(image)}
-                  className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition cursor-pointer"
+                  className={`group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition cursor-pointer w-full ${hobby.gallery?.images?.length === 1 ? "block" : ""}`}
                 >
                   <img
                     src={image || "/placeholder.svg"}
                     alt={`Gallery item ${index + 1}`}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                    className={`w-full ${hobby.gallery.images.length === 1 ? "h-80 sm:h-96" : "h-64"} object-cover group-hover:scale-105 transition-transform duration-300`}
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition flex items-center justify-center">
                     <span className="text-white opacity-0 group-hover:opacity-100 transition text-lg font-semibold">
