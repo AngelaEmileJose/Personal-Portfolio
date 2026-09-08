@@ -50,6 +50,11 @@ const hobbies: HobbyGallery[] = [
     image: "/booboo-cover.jpg",
     gallery: {
       images: [
+        "/sneak-peak-saree-booboo-lakeside.jpg",
+        "/sneak-peak-family-selfie.jpg",
+        "/sneak-peak-nara-deer.jpg",
+        "/sneak-peak-maneki-neko-cats.jpg",
+        "/sneak-peak-korean-dinner-gathering.jpg",
         "/sneak-peak-cherry-blossom-picnic.jpg",
         "/sneak-peak-friends-trio.jpg",
         "/sneak-peak-daruma-dolls.jpg",
