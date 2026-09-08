@@ -46,7 +46,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             >
-              Computer Science Graduate · Incoming Robotics Engineer @ WIM Corp
+              Computer Science Researcher & Robotics Engineer (Incoming @ WIM Corp)
             </motion.h2>
 
             <motion.p
@@ -55,8 +55,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             >
-              Bridging technology and human connection through research, innovation, and a passion for making complex
-              systems accessible.
+              Designing tangible, human-centered systems at the intersection of code, physical space, and social impact.
             </motion.p>
 
             <motion.div
