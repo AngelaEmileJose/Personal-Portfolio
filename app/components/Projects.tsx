@@ -10,6 +10,7 @@ interface Project {
   date: string
   description: string
   image: string
+  imageFit?: "cover" | "contain"
   tags: string[]
   award?: string
   links?: {
@@ -44,10 +45,12 @@ const projects: Project[] = [
     date: "2026",
     description:
       "This project introduces a hybrid fire detection system that integrates YOLO11 for visual object detection with the CLIP multimodal model to understand scene context and minimize false alarms. By effectively reducing critical false negatives and achieving an optimal F2-score, the system's development led to an award-winning conference paper and a registered software copyright.",
-    image: "/fire-detection-dashboard.jpg",
+    image: "/fire-detection-architecture.png",
+    imageFit: "contain",
     tags: ["YOLO11", "CLIP ViT-B/32", "InternVL 2.5-4B", "Gemini 3 Flash", "Multimodal VQA", "F2-Score: 0.833"],
     award: "Bronze / Excellent Paper Award (동상) · 2026 KIT Summer Comprehensive Academic Conference (제 26-178 호)",
     links: {
+      github: "https://github.com/soh214/fireDetection",
       paper: "/fire-detection-research-paper.pdf",
       paperLabel: "Research Paper",
       certificate: "/fire-detection-certificate.pdf",
@@ -145,15 +148,17 @@ export default function Projects() {
                 />
 
                 {/* Project Image */}
-                <div className="relative h-60 sm:h-64 bg-slate-900 overflow-hidden">
+                <div className={`relative h-60 sm:h-64 ${project.imageFit === "contain" ? "bg-white" : "bg-slate-900"} overflow-hidden`}>
                   <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className={`${project.imageFit === "contain" ? "object-contain p-2" : "object-cover"} transition-transform duration-500 group-hover:scale-105`}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60" />
-                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs font-mono">
+                  {project.imageFit !== "contain" && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60" />
+                  )}
+                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs font-mono z-10">
                     <span className="bg-black/70 backdrop-blur-sm px-2.5 py-1 rounded-md border border-white/20">
                       {project.date}
                     </span>
