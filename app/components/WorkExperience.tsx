@@ -9,8 +9,8 @@ export default function WorkExperience() {
       title: "Research Intern",
       company: "Software Safety Engineering LAB",
       location: "Daegu, South Korea",
-      period: "May 2025 - Present",
-      duration: "8 mos",
+      period: "May 2025 - Feb 2026",
+      duration: "10 mos",
       type: "Internship",
       description: [
         "Conducting research on Large Language Models (LLMs) for formal verification of software",
