@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { ExternalLink, Github, FileText, Award, Layers } from "lucide-react"
 import { SequentialWindow } from "@/components/animations/SequentialWindow"
 import { ScrollShiftCard } from "@/components/animations/ScrollShiftCard"
+import { FireDetectionShowcase } from "@/components/FireDetectionShowcase"
 
 const featuredProject = {
   title: "GANNoiseRemover-NoiseFilter",
@@ -172,6 +173,12 @@ export default function Projects() {
             </div>
           </div>
         </SequentialWindow>
+
+        {/* ========================================================================= */}
+        {/* AWARD-WINNING CAPSTONE: BRONZE MEDAL & SOFTWARE COPYRIGHT                 */}
+        {/* Multimodal AI Fire Detection System (YOLO11 + CLIP) with hover breakdown  */}
+        {/* ========================================================================= */}
+        <FireDetectionShowcase />
 
         {/* ========================================================================= */}
         {/* ANIMATION 2: SCROLL-DRIVEN THUMBNAIL SHIFTING                             */}
