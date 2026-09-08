@@ -2,9 +2,9 @@ import "./globals.css"
 import type React from "react" // Import React
 
 export const metadata = {
-  title: "Angela Emile Jose - Computer Science Student & Researcher",
+  title: "Angela Emile Jose - Robotics Engineer & AI Researcher",
   description:
-    "Portfolio of Angela Emile Jose, a Computer Science student at Kyungpook National University specializing in software engineering, AI research, and web development.",
+    "Portfolio of Angela Emile Jose, Computer Science graduate and Incoming Robotics Engineer at WIM Corp, specializing in AI research, robotics systems, and human-centered design.",
   generator: 'v0.app'
 }
 

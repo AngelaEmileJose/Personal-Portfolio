@@ -46,7 +46,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             >
-              4th Year Computer Science Student
+              Computer Science Graduate · Incoming Robotics Engineer @ WIM Corp
             </motion.h2>
 
             <motion.p

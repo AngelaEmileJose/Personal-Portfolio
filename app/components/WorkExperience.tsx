@@ -6,6 +6,18 @@ import { motion } from "framer-motion"
 export default function WorkExperience() {
   const experiences = [
     {
+      title: "Incoming Robotics Engineer",
+      company: "WIM Corp",
+      location: "Daegu, South Korea",
+      period: "Starting Fall 2026",
+      duration: "Full-time",
+      type: "Incoming",
+      description: [
+        "Accepted full-time engineering role to develop and deploy robotics systems and intelligent automation capabilities",
+        "Bridging artificial intelligence, computer vision, and physical robotics platforms in Daegu, South Korea",
+      ],
+    },
+    {
       title: "Research Intern",
       company: "Software Safety Engineering LAB",
       location: "Daegu, South Korea",
