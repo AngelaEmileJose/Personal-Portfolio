@@ -2,7 +2,6 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { Sparkles } from "lucide-react"
 import { ParallaxContainer, ParallaxLayer } from "@/components/animations/MouseParallax"
 
 export default function Hero() {
@@ -32,11 +31,6 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FCEF91] text-xs font-bold text-[#163832] mb-4 border border-[#163832]/10 shadow-sm">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Interactive Portfolio</span>
-            </div>
-
             <motion.h1
               className="text-4xl md:text-6xl font-bold mb-4 tracking-tight text-[#163832]"
               initial={{ opacity: 0, y: 30 }}
