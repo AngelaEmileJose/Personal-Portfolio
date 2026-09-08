@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { X } from "lucide-react"
+import { X, ExternalLink, Download, BookOpen } from "lucide-react"
 import { motion } from "framer-motion"
 
 interface HobbyGallery {
@@ -16,6 +16,13 @@ interface HobbyGallery {
     link?: string
   }
   blogLink?: string
+  article?: {
+    title: string
+    publication: string
+    date: string
+    url: string
+    pdfUrl: string
+  }
   gallery?: {
     images?: string[]
     videos?: { title: string; url: string; description?: string }[]
@@ -96,6 +103,27 @@ A huge thank you to the KNU Office of International Affairs for this recognition
       ],
     },
   },
+  {
+    title: "Writing & Journalism",
+    description:
+      'Selected as one of only two international student contributors for the Spring 2026 KNU Times, I authored the article "Making Friends in Korea as a Foreign Student" to share my experience navigating cultural barriers and building a community on campus.',
+    image: "/international-cultural-exchange.jpg",
+    article: {
+      title: "Making Friends in Korea as a Foreign Student",
+      publication: "KNU Times (Issue 401)",
+      date: "Spring 2026",
+      url: "https://www.knupresscenter.com/news/articleView.html?idxno=31898",
+      pdfUrl: "/knu-times-making-friends-in-korea.pdf",
+    },
+    gallery: {
+      images: [
+        "/international-cultural-exchange.jpg",
+        "/cultural-exchange-event.jpg",
+        "/international-students-gathering.jpg",
+        "/friends-from-different-cultures.jpg",
+      ],
+    },
+  },
 ]
 
 function GalleryModal({ hobby, onClose }: { hobby: HobbyGallery; onClose: () => void }) {
@@ -149,6 +177,38 @@ function GalleryModal({ hobby, onClose }: { hobby: HobbyGallery; onClose: () => 
                 className="inline-block px-6 py-2.5 bg-[#FCEF91] text-[#163832] rounded-lg hover:bg-[#AEEBDC] transition font-bold shadow-sm border border-[#163832]/10"
               >
                 Visit Blog →
+              </a>
+            </div>
+          </div>
+        )}
+
+        {hobby.article && (
+          <div className="bg-gradient-to-r from-[#AEEBDC]/20 via-white to-[#FCEF91]/20 border-b p-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FCEF91] text-[#163832] text-xs font-bold mb-3 border border-[#163832]/10">
+              <BookOpen className="w-3.5 h-3.5" />
+              <span>{hobby.article.publication} · {hobby.article.date}</span>
+            </div>
+            <h3 className="text-xl font-bold text-[#163832] mb-2">{hobby.article.title}</h3>
+            <p className="text-gray-700 text-sm leading-relaxed mb-4">{hobby.description}</p>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href={hobby.article.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#FCEF91] text-[#163832] rounded-lg hover:bg-[#AEEBDC] transition font-bold text-sm shadow-sm border border-[#163832]/10"
+              >
+                <ExternalLink className="w-4 h-4" />
+                <span>Read Online at KNU Press Center →</span>
+              </a>
+              <a
+                href={hobby.article.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                download="KNU_Times_Making_Friends_In_Korea.pdf"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#AEEBDC] text-[#163832] rounded-lg hover:bg-[#FCEF91] transition font-bold text-sm shadow-sm border border-[#163832]/10"
+              >
+                <Download className="w-4 h-4" />
+                <span>Download Article PDF ↓</span>
               </a>
             </div>
           </div>
@@ -303,12 +363,35 @@ export default function Hobbies() {
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-[#163832]">{hobby.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{hobby.description}</p>
+                {hobby.article && (
+                  <div className="mt-4 flex flex-wrap gap-2" onClick={(e) => e.stopPropagation()}>
+                    <a
+                      href={hobby.article.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-bold text-[#163832] inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#FCEF91] hover:bg-[#AEEBDC] rounded-full border border-[#163832]/10 transition shadow-sm"
+                    >
+                      <ExternalLink className="w-3 h-3" />
+                      <span>Read Online Article →</span>
+                    </a>
+                    <a
+                      href={hobby.article.pdfUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      download="KNU_Times_Making_Friends_In_Korea.pdf"
+                      className="text-xs font-bold text-[#163832] inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#AEEBDC] hover:bg-[#FCEF91] rounded-full border border-[#163832]/10 transition shadow-sm"
+                    >
+                      <Download className="w-3 h-3" />
+                      <span>Download PDF ↓</span>
+                    </a>
+                  </div>
+                )}
                 {hobby.blogLink && (
                   <p className="text-xs font-bold text-[#163832] mt-4 inline-block px-3 py-1 bg-[#FCEF91]/70 rounded-full border border-[#FCEF91]">
                     Visit Blog →
                   </p>
                 )}
-                {!hobby.blogLink && (
+                {!hobby.blogLink && !hobby.article && (
                   <p className="text-xs font-bold text-[#163832] mt-4 inline-block px-3 py-1 bg-[#AEEBDC]/50 rounded-full border border-[#AEEBDC]">
                     Click to view gallery →
                   </p>
