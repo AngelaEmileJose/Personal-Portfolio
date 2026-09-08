@@ -83,7 +83,10 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wider text-[#25534A]">Location</p>
-                  <p className="text-sm sm:text-base font-semibold text-[#163832]">Daegu, South Korea</p>
+                  <div className="space-y-0.5">
+                    <p className="text-sm sm:text-base font-semibold text-[#163832]">Daegu, South Korea</p>
+                    <p className="text-sm sm:text-base font-semibold text-[#163832]">India</p>
+                  </div>
                 </div>
               </div>
 
@@ -93,9 +96,14 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wider text-[#25534A]">Phone</p>
-                  <a href="tel:+821039378830" className="text-sm sm:text-base font-semibold text-[#163832] hover:text-[#0b6b57] hover:underline">
-                    +82 010 3937 8830
-                  </a>
+                  <div className="flex flex-col space-y-0.5">
+                    <a href="tel:+821039378830" className="text-sm sm:text-base font-semibold text-[#163832] hover:text-[#0b6b57] hover:underline">
+                      +82 010 3937 8830
+                    </a>
+                    <a href="tel:+919846469020" className="text-sm sm:text-base font-semibold text-[#163832] hover:text-[#0b6b57] hover:underline">
+                      +91 9846469020
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
