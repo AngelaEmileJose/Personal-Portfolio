@@ -27,40 +27,40 @@ export default function Header() {
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-50 bg-primary bg-opacity-90 text-quaternary"
+      className="fixed top-0 left-0 right-0 z-50 bg-[#AEEBDC]/95 backdrop-blur-md text-[#163832] border-b border-[#FCEF91]/80 shadow-sm"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <nav className="container mx-auto px-3 py-3 md:px-6 md:py-4">
-        <ul className="flex flex-wrap justify-center items-center gap-2 md:gap-8 text-xs md:text-lg">
+        <ul className="flex flex-wrap justify-center items-center gap-1.5 md:gap-6 text-xs md:text-base font-medium">
           <li>
-            <a href="#hero" className="hover:text-tertiary transition-colors whitespace-nowrap">
+            <a href="#hero" className="px-3 py-1.5 rounded-full text-[#163832] hover:bg-[#FCEF91]/70 transition-all whitespace-nowrap">
               Home
             </a>
           </li>
           <li>
-            <a href="#projects" className="hover:text-tertiary transition-colors whitespace-nowrap">
+            <a href="#projects" className="px-3 py-1.5 rounded-full text-[#163832] hover:bg-[#FCEF91]/70 transition-all whitespace-nowrap">
               Projects
             </a>
           </li>
           <li>
-            <a href="#about" className="hover:text-tertiary transition-colors whitespace-nowrap">
+            <a href="#about" className="px-3 py-1.5 rounded-full text-[#163832] hover:bg-[#FCEF91]/70 transition-all whitespace-nowrap">
               About
             </a>
           </li>
           <li>
-            <a href="#experience" className="hover:text-tertiary transition-colors whitespace-nowrap">
+            <a href="#experience" className="px-3 py-1.5 rounded-full text-[#163832] hover:bg-[#FCEF91]/70 transition-all whitespace-nowrap">
               Experience
             </a>
           </li>
           <li>
-            <a href="#hobbies" className="hover:text-tertiary transition-colors whitespace-nowrap">
+            <a href="#hobbies" className="px-3 py-1.5 rounded-full text-[#163832] hover:bg-[#FCEF91]/70 transition-all whitespace-nowrap">
               Hobbies
             </a>
           </li>
           <li>
-            <a href="#contact" className="hover:text-tertiary transition-colors whitespace-nowrap">
+            <a href="#contact" className="px-3 py-1.5 rounded-full text-[#163832] hover:bg-[#FCEF91]/70 transition-all whitespace-nowrap">
               Contact
             </a>
           </li>
@@ -70,7 +70,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               download="Angela_Emile_Jose_Resume.pdf"
-              className="px-3 py-1 md:px-4 md:py-2 bg-tertiary text-primary rounded-lg hover:bg-quaternary transition-colors font-semibold whitespace-nowrap text-xs md:text-lg"
+              className="px-3.5 py-1.5 md:px-4 md:py-2 bg-[#FCEF91] text-[#163832] rounded-full hover:bg-white transition-colors font-bold shadow-sm border border-[#163832]/10 whitespace-nowrap text-xs md:text-sm"
             >
               Resume
             </a>

@@ -7,7 +7,7 @@ import { ParallaxContainer, ParallaxLayer } from "@/components/animations/MouseP
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-primary text-quaternary pt-16 overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#AEEBDC]/50 via-[#f4fcfa] to-[#FCEF91]/40 text-[#163832] pt-16 overflow-hidden">
       <ParallaxContainer className="w-full h-full min-h-screen flex items-center justify-center relative">
         {/* ========================================================================= */}
         {/* ANIMATION 1: ROBBY LEONARDI MOUSE PARALLAX ENGINE                         */}
@@ -16,23 +16,23 @@ export default function Hero() {
 
         {/* 1. Deep Background Layer (factor 0.02) */}
         <ParallaxLayer factor={0.02} factorY={0.02} className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-10 w-72 h-72 rounded-full bg-tertiary/10 blur-3xl" />
-          <div className="absolute bottom-1/4 right-10 w-96 h-96 rounded-full bg-secondary/20 blur-3xl" />
-          {/* Subtle geometric grid dots */}
-          <div className="absolute inset-0 bg-[radial-gradient(#91AC8F_1px,transparent_1px)] [background-size:32px_32px] opacity-15" />
+          <div className="absolute top-1/4 left-10 w-80 h-80 rounded-full bg-[#AEEBDC]/40 blur-3xl" />
+          <div className="absolute bottom-1/4 right-10 w-96 h-96 rounded-full bg-[#FCEF91]/50 blur-3xl" />
+          {/* Geometric grid dots in Baby Turquoise */}
+          <div className="absolute inset-0 bg-[radial-gradient(#AEEBDC_1.5px,transparent_1.5px)] [background-size:32px_32px] opacity-40" />
         </ParallaxLayer>
 
         {/* 2. Floating Ambient Elements (factor 0.04 - 0.06) */}
         <ParallaxLayer factor={0.04} factorY={0.03} className="absolute top-28 left-8 md:left-24 pointer-events-none hidden sm:block">
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/50 backdrop-blur-md border border-quaternary/20 text-xs text-quaternary shadow-lg">
-            <Brain className="w-3.5 h-3.5 text-quaternary" />
+          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-[#AEEBDC] text-xs font-semibold text-[#163832] shadow-md">
+            <Brain className="w-3.5 h-3.5 text-[#163832]" />
             <span>AI & Deep Learning</span>
           </div>
         </ParallaxLayer>
 
         <ParallaxLayer factor={-0.05} factorY={-0.04} className="absolute bottom-28 left-12 md:left-32 pointer-events-none hidden md:block">
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/50 backdrop-blur-md border border-quaternary/20 text-xs text-quaternary shadow-lg">
-            <Code2 className="w-3.5 h-3.5 text-quaternary" />
+          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-[#FCEF91] text-xs font-semibold text-[#163832] shadow-md">
+            <Code2 className="w-3.5 h-3.5 text-[#163832]" />
             <span>Accessible Systems</span>
           </div>
         </ParallaxLayer>
@@ -45,13 +45,13 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary/20 text-xs font-semibold text-quaternary mb-4 border border-quaternary/20">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FCEF91] text-xs font-bold text-[#163832] mb-4 border border-[#163832]/10 shadow-sm">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Interactive Portfolio</span>
             </div>
 
             <motion.h1
-              className="text-4xl md:text-6xl font-bold mb-4 tracking-tight"
+              className="text-4xl md:text-6xl font-bold mb-4 tracking-tight text-[#163832]"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -60,7 +60,7 @@ export default function Hero() {
             </motion.h1>
 
             <motion.h2
-              className="text-2xl md:text-3xl mb-6 text-quaternary/90 font-light"
+              className="text-2xl md:text-3xl mb-6 text-[#25534A] font-medium"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
@@ -69,7 +69,7 @@ export default function Hero() {
             </motion.h2>
 
             <motion.p
-              className="text-lg mb-8 leading-relaxed text-quaternary/80 max-w-xl"
+              className="text-lg mb-8 leading-relaxed text-[#163832]/85 max-w-xl"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -86,7 +86,7 @@ export default function Hero() {
               <ParallaxLayer factor={0.07} factorY={0.06} className="inline-block">
                 <a
                   href="#projects"
-                  className="inline-block bg-tertiary text-primary px-8 py-3.5 rounded-full font-semibold hover:bg-quaternary transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:translate-y-0"
+                  className="inline-block bg-[#FCEF91] text-[#163832] px-8 py-3.5 rounded-full font-bold hover:bg-[#AEEBDC] transition-all shadow-md hover:shadow-lg border border-[#163832]/15 transform hover:-translate-y-0.5 active:translate-y-0"
                 >
                   Explore My Work
                 </a>
@@ -103,31 +103,31 @@ export default function Hero() {
           >
             {/* Subject Image Layer (factor 0.05) */}
             <ParallaxLayer factor={0.05} factorY={0.05} rotateFactor={0.005} className="relative z-10">
-              <div className="relative p-2 rounded-2xl bg-gradient-to-tr from-secondary/80 to-tertiary/40 backdrop-blur-md border border-quaternary/20 shadow-2xl">
+              <div className="relative p-2.5 rounded-2xl bg-gradient-to-tr from-[#AEEBDC] via-white to-[#FCEF91] shadow-2xl border border-white/60">
                 <Image
                   src="/hero-photo.jpg"
                   alt="Angela Emile Jose"
                   width={380}
                   height={380}
-                  className="rounded-xl object-cover"
+                  className="rounded-xl object-cover shadow-inner"
                   priority
                 />
               </div>
             </ParallaxLayer>
 
-            {/* Foreground Floating Floating Badge (factor 0.11 - highest parallax response) */}
+            {/* Foreground Floating Badge (factor 0.11 - highest parallax response) */}
             <ParallaxLayer
               factor={0.11}
               factorY={0.09}
               className="absolute -bottom-6 -left-4 sm:bottom-4 sm:-left-8 z-20"
             >
-              <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/95 backdrop-blur-md text-primary shadow-2xl border border-primary/10">
-                <div className="p-2 rounded-lg bg-primary/10 text-primary">
+              <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/95 backdrop-blur-md text-[#163832] shadow-2xl border-2 border-[#FCEF91]">
+                <div className="p-2 rounded-lg bg-[#AEEBDC] text-[#163832]">
                   <Award className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-semibold uppercase tracking-wider text-secondary">Award Winner</div>
-                  <div className="text-xs font-bold text-primary">Grand Prize (대상) · KICS 2025</div>
+                  <div className="text-[11px] font-bold uppercase tracking-wider text-[#25534A]">Award Winner</div>
+                  <div className="text-xs font-extrabold text-[#163832]">Grand Prize (대상) · KICS 2025</div>
                 </div>
               </div>
             </ParallaxLayer>

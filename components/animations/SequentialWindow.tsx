@@ -16,8 +16,8 @@ export interface SequentialWindowProps {
 /**
  * SequentialWindow
  * Implements Robby Leonardi's Sequential Window Opening Animation:
- * Split panels (windowLeftOpening & windowRightOpening) that slide open horizontally
- * in stages as the user scrolls into view, dramatically unveiling the featured showcase underneath.
+ * Split panels (windowLeftOpening in Baby Turquoise & windowRightOpening in Baby Yellow)
+ * that slide open horizontally in stages as the user scrolls into view.
  */
 export function SequentialWindow({
   children,
@@ -55,7 +55,6 @@ export function SequentialWindow({
   const interiorScale = useTransform(scrollYProgress, [0.2, 0.9], [0.95, 1])
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    // Calculate 1..7 slide step corresponding to Leonardi's tutorial
     const step = Math.min(7, Math.max(1, Math.ceil(latest * 7)))
     setCurrentStep(step)
   })
@@ -67,26 +66,26 @@ export function SequentialWindow({
   return (
     <div ref={containerRef} className={`relative my-12 ${className}`}>
       {/* Step Indicator / Leonardi Shutter Stage Status */}
-      <div className="flex items-center justify-between mb-3 px-2 text-xs font-mono text-secondary">
+      <div className="flex items-center justify-between mb-3 px-2 text-xs font-mono text-[#163832]">
         <div className="flex items-center gap-2">
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-tertiary/20 text-primary font-semibold">
-            <Sparkles className="w-3 h-3" />
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FCEF91] text-[#163832] font-bold border border-[#163832]/10 shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-[#163832]" />
             {badge}
           </span>
-          <span className="hidden sm:inline text-gray-500">
+          <span className="hidden sm:inline text-[#25534A] font-semibold">
             Stage {currentStep}/7 {currentStep === 7 ? "· Fully Unlocked" : "· Opening..."}
           </span>
         </div>
         <button
           onClick={() => setIsOpenManual((prev) => (prev === true ? false : true))}
-          className="hover:text-primary transition-colors flex items-center gap-1 text-[11px] underline underline-offset-2"
+          className="hover:text-black font-bold transition-colors flex items-center gap-1 text-xs underline underline-offset-2 text-[#163832]"
         >
           {isOpenManual === true ? "Close Shutter" : "Toggle Full View"}
         </button>
       </div>
 
       {/* Main Window Frame Container */}
-      <div className="relative rounded-2xl overflow-hidden border-2 border-primary/20 shadow-2xl bg-slate-900 min-h-[460px]">
+      <div className="relative rounded-2xl overflow-hidden border-2 border-[#AEEBDC] shadow-2xl bg-[#163832] min-h-[460px]">
         {/* Interior Reveal Content */}
         <motion.div
           style={{ scale: interiorScale }}
@@ -95,38 +94,38 @@ export function SequentialWindow({
           {children}
         </motion.div>
 
-        {/* LEFT SHUTTER PANEL (windowLeftOpening) */}
+        {/* LEFT SHUTTER PANEL (windowLeftOpening: Baby Turquoise) */}
         <motion.div
           style={{ x: leftX, opacity: shutterOpacity }}
-          className="absolute inset-y-0 left-0 w-1/2 z-20 pointer-events-none bg-gradient-to-br from-[#4B5945] via-[#55664f] to-[#3a4535] border-r border-white/20 shadow-2xl flex items-center justify-end pr-4 sm:pr-8"
+          className="absolute inset-y-0 left-0 w-1/2 z-20 pointer-events-none bg-gradient-to-br from-[#AEEBDC] via-[#94e3d1] to-[#78d4c0] border-r-2 border-[#FCEF91] shadow-2xl flex items-center justify-end pr-4 sm:pr-8"
         >
-          {/* Architectural Shutter Louvers / Lines */}
-          <div className="absolute inset-0 opacity-10 bg-[repeating-linear-gradient(0deg,#fff,#fff_2px,transparent_2px,transparent_18px)]" />
+          {/* Architectural Shutter Louvers */}
+          <div className="absolute inset-0 opacity-15 bg-[repeating-linear-gradient(0deg,#163832,#163832_2px,transparent_2px,transparent_18px)]" />
 
           {/* Left Door Handle / Badge */}
-          <div className="relative z-10 flex flex-col items-center gap-2 text-quaternary/90">
+          <div className="relative z-10 flex flex-col items-center gap-2 text-[#163832]">
             <ChevronLeft className="w-6 h-6 animate-pulse" />
             <div className="hidden sm:flex flex-col items-center">
-              <span className="text-[10px] tracking-widest font-mono uppercase">Panel L</span>
-              <div className="w-1 h-12 rounded-full bg-quaternary/30 mt-1" />
+              <span className="text-[10px] tracking-widest font-mono uppercase font-bold text-[#163832]">Aperture L</span>
+              <div className="w-1.5 h-12 rounded-full bg-[#163832]/25 mt-1" />
             </div>
           </div>
         </motion.div>
 
-        {/* RIGHT SHUTTER PANEL (windowRightOpening) */}
+        {/* RIGHT SHUTTER PANEL (windowRightOpening: Baby Yellow) */}
         <motion.div
           style={{ x: rightX, opacity: shutterOpacity }}
-          className="absolute inset-y-0 right-0 w-1/2 z-20 pointer-events-none bg-gradient-to-bl from-[#4B5945] via-[#55664f] to-[#3a4535] border-l border-white/20 shadow-2xl flex items-center justify-start pl-4 sm:pl-8"
+          className="absolute inset-y-0 right-0 w-1/2 z-20 pointer-events-none bg-gradient-to-bl from-[#FCEF91] via-[#f7e87b] to-[#ebd758] border-l-2 border-[#AEEBDC] shadow-2xl flex items-center justify-start pl-4 sm:pl-8"
         >
-          {/* Architectural Shutter Louvers / Lines */}
-          <div className="absolute inset-0 opacity-10 bg-[repeating-linear-gradient(0deg,#fff,#fff_2px,transparent_2px,transparent_18px)]" />
+          {/* Architectural Shutter Louvers */}
+          <div className="absolute inset-0 opacity-15 bg-[repeating-linear-gradient(0deg,#163832,#163832_2px,transparent_2px,transparent_18px)]" />
 
           {/* Right Door Handle / Badge */}
-          <div className="relative z-10 flex flex-col items-center gap-2 text-quaternary/90">
+          <div className="relative z-10 flex flex-col items-center gap-2 text-[#163832]">
             <ChevronRight className="w-6 h-6 animate-pulse" />
             <div className="hidden sm:flex flex-col items-center">
-              <span className="text-[10px] tracking-widest font-mono uppercase">Panel R</span>
-              <div className="w-1 h-12 rounded-full bg-quaternary/30 mt-1" />
+              <span className="text-[10px] tracking-widest font-mono uppercase font-bold text-[#163832]">Aperture R</span>
+              <div className="w-1.5 h-12 rounded-full bg-[#163832]/25 mt-1" />
             </div>
           </div>
         </motion.div>
@@ -137,13 +136,13 @@ export function SequentialWindow({
             opacity: useTransform(scrollYProgress, [0, 0.25], [1, 0]),
             scale: useTransform(scrollYProgress, [0, 0.25], [1, 0.8]),
           }}
-          className="absolute inset-0 z-30 flex flex-col items-center justify-center pointer-events-none text-white px-4 text-center"
+          className="absolute inset-0 z-30 flex flex-col items-center justify-center pointer-events-none text-[#163832] px-4 text-center"
         >
-          <div className="p-4 rounded-full bg-black/40 backdrop-blur-md border border-white/20 shadow-lg mb-3">
-            <Lock className="w-6 h-6 text-quaternary" />
+          <div className="p-4 rounded-full bg-white/95 backdrop-blur-md border-2 border-[#163832]/15 shadow-xl mb-3">
+            <Lock className="w-6 h-6 text-[#163832]" />
           </div>
-          <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white mb-1">{title}</h3>
-          <p className="text-xs sm:text-sm text-quaternary/80 max-w-sm">{subtitle}</p>
+          <h3 className="text-xl sm:text-2xl font-black tracking-tight text-[#163832] mb-1 drop-shadow-sm">{title}</h3>
+          <p className="text-xs sm:text-sm font-medium text-[#163832]/90 max-w-sm">{subtitle}</p>
         </motion.div>
       </div>
     </div>

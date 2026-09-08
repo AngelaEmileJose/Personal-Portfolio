@@ -7,8 +7,8 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "app/**/*.{ts,tsx}",
     "components/**/*.{ts,tsx}",
-      "*.{js,ts,jsx,tsx,mdx}"
-],
+    "*.{js,ts,jsx,tsx,mdx}"
+  ],
   theme: {
     extend: {
       colors: {
@@ -17,14 +17,6 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -34,8 +26,8 @@ module.exports = {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "#0E5C4E",
+          foreground: "#FFFFFF",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -45,10 +37,16 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        primary: "#4B5945",
-        secondary: "#66785F",
-        tertiary: "#91AC8F",
-        quaternary: "#B2C9AD",
+        // Theme Colors requested:
+        // Baby Yellow: #FCEF91
+        // Baby Turquoise: #AEEBDC
+        babyYellow: "#FCEF91",
+        babyTurquoise: "#AEEBDC",
+        // Primary text/anchor dark tone for contrast & readability
+        primary: "#163832",
+        secondary: "#25534A",
+        tertiary: "#FCEF91",     // Baby Yellow
+        quaternary: "#AEEBDC",   // Baby Turquoise
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -123,14 +123,14 @@ function GalleryModal({ hobby, onClose }: { hobby: HobbyGallery; onClose: () => 
         </div>
 
         {hobby.award && (
-          <div className="bg-amber-50 border-b p-6">
-            <p className="text-gray-700 whitespace-pre-line leading-relaxed">{hobby.award.detailedDescription}</p>
+          <div className="bg-[#FCEF91]/20 border-b p-6">
+            <p className="text-[#163832] whitespace-pre-line leading-relaxed">{hobby.award.detailedDescription}</p>
             <div className="mt-4">
               <a
                 href="https://youtu.be/PO1sgjV5HfQ?si=z6Uk18XfyUc1gKcQ"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-6 py-2 bg-primary text-quaternary rounded-lg hover:bg-secondary transition font-semibold"
+                className="inline-block px-6 py-2.5 bg-[#FCEF91] text-[#163832] rounded-lg hover:bg-[#AEEBDC] transition font-bold shadow-sm border border-[#163832]/10"
               >
                 Watch Video on YouTube →
               </a>
@@ -139,14 +139,14 @@ function GalleryModal({ hobby, onClose }: { hobby: HobbyGallery; onClose: () => 
         )}
 
         {hobby.blogLink && (
-          <div className="bg-blue-50 border-b p-6">
-            <p className="text-gray-700 mb-3">Visit my Naver Blog to see more content and updates:</p>
+          <div className="bg-[#AEEBDC]/20 border-b p-6">
+            <p className="text-[#163832] mb-3">Visit my Naver Blog to see more content and updates:</p>
             <div className="mt-4">
               <a
                 href={hobby.blogLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-6 py-2 bg-primary text-quaternary rounded-lg hover:bg-secondary transition font-semibold"
+                className="inline-block px-6 py-2.5 bg-[#FCEF91] text-[#163832] rounded-lg hover:bg-[#AEEBDC] transition font-bold shadow-sm border border-[#163832]/10"
               >
                 Visit Blog →
               </a>
@@ -268,10 +268,10 @@ export default function Hobbies() {
   const [selectedHobby, setSelectedHobby] = useState<HobbyGallery | null>(null)
 
   return (
-    <section id="hobbies" className="py-20 bg-tertiary">
-      <div className="container mx-auto px-6">
+    <section id="hobbies" className="py-20 bg-gradient-to-b from-[#FCEF91]/25 via-white to-[#AEEBDC]/25 text-[#163832]">
+      <div className="container mx-auto px-6 max-w-5xl">
         <motion.h2
-          className="text-3xl font-bold mb-12 text-center text-primary"
+          className="text-3xl sm:text-4xl font-extrabold mb-12 text-center text-[#163832] tracking-tight"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -284,33 +284,35 @@ export default function Hobbies() {
             <motion.button
               key={index}
               onClick={() => setSelectedHobby(hobby)}
-              className="bg-white rounded-lg shadow-lg overflow-hidden group text-left hover:shadow-xl transition cursor-pointer"
+              className="bg-white rounded-2xl shadow-md overflow-hidden group text-left hover:shadow-xl transition cursor-pointer border border-[#AEEBDC] hover:border-[#FCEF91]"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.03 }}
+              whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
               <div className="relative h-64 overflow-hidden">
                 <img
                   src={hobby.image || "/placeholder.svg"}
                   alt={hobby.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-primary">{hobby.title}</h3>
-                <p className="text-gray-600">{hobby.description}</p>
+                <h3 className="text-xl font-bold mb-2 text-[#163832]">{hobby.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{hobby.description}</p>
                 {hobby.blogLink && (
-                  <p className="text-sm text-accent mt-3 font-semibold">
-                    <a href={hobby.blogLink} target="_blank" rel="noopener noreferrer">
-                      Visit Blog →
-                    </a>
+                  <p className="text-xs font-bold text-[#163832] mt-4 inline-block px-3 py-1 bg-[#FCEF91]/70 rounded-full border border-[#FCEF91]">
+                    Visit Blog →
                   </p>
                 )}
-                {!hobby.blogLink && <p className="text-sm text-accent mt-3 font-semibold">Click to view gallery →</p>}
+                {!hobby.blogLink && (
+                  <p className="text-xs font-bold text-[#163832] mt-4 inline-block px-3 py-1 bg-[#AEEBDC]/50 rounded-full border border-[#AEEBDC]">
+                    Click to view gallery →
+                  </p>
+                )}
               </div>
             </motion.button>
           ))}
