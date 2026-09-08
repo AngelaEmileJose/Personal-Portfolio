@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { ExternalLink, Github, FileText, Award, Layers, ShieldCheck } from "lucide-react"
+import { ExternalLink, Github, FileText, Award, Layers } from "lucide-react"
 import { ScrollShiftCard } from "@/components/animations/ScrollShiftCard"
 
 interface Project {
@@ -12,7 +12,6 @@ interface Project {
   image: string
   tags: string[]
   award?: string
-  copyright?: string
   links?: {
     github?: string
     demo?: string
@@ -44,7 +43,6 @@ const projects: Project[] = [
     image: "/fire-detection-dashboard.jpg",
     tags: ["YOLO11", "CLIP ViT-B/32", "InternVL 2.5-4B", "Gemini 3 Flash", "Multimodal VQA", "F2-Score: 0.833"],
     award: "Bronze / Excellent Paper Award (동상) · 2026 KIT Summer Comprehensive Academic Conference (제 26-178 호)",
-    copyright: "Registered Software Copyright: 제 C-2026-025665 호 (한국저작권위원회)",
     links: {
       paper: "/fire-detection-paper.pdf",
       certificate: "/fire-detection-award-certificate.pdf",
@@ -172,17 +170,9 @@ export default function Projects() {
 
                     {/* Award / Recognition Banner (if applicable) */}
                     {project.award && (
-                      <div className="mb-4 p-3 rounded-xl bg-gradient-to-r from-[#FCEF91]/40 via-[#AEEBDC]/30 to-[#FCEF91]/40 border border-[#FCEF91] text-xs text-[#163832] flex items-start gap-2.5">
-                        <Award className="w-4 h-4 mt-0.5 flex-shrink-0 text-[#163832]" />
-                        <div>
-                          <div className="font-bold">{project.award}</div>
-                          {project.copyright && (
-                            <div className="text-[11px] text-[#25534A] mt-0.5 flex items-center gap-1 font-mono">
-                              <ShieldCheck className="w-3 h-3 text-[#163832]" />
-                              <span>{project.copyright}</span>
-                            </div>
-                          )}
-                        </div>
+                      <div className="mb-4 p-3 rounded-xl bg-gradient-to-r from-[#FCEF91]/40 via-[#AEEBDC]/30 to-[#FCEF91]/40 border border-[#FCEF91] text-xs text-[#163832] flex items-center gap-2.5">
+                        <Award className="w-4 h-4 flex-shrink-0 text-[#163832]" />
+                        <span className="font-bold">{project.award}</span>
                       </div>
                     )}
                   </div>
