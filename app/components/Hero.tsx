@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { Sparkles, Code2, Brain } from "lucide-react"
+import { Sparkles } from "lucide-react"
 import { ParallaxContainer, ParallaxLayer } from "@/components/animations/MouseParallax"
 
 export default function Hero() {
@@ -22,20 +22,7 @@ export default function Hero() {
           <div className="absolute inset-0 bg-[radial-gradient(#AEEBDC_1.5px,transparent_1.5px)] [background-size:32px_32px] opacity-40" />
         </ParallaxLayer>
 
-        {/* 2. Floating Ambient Elements (factor 0.04 - 0.06) */}
-        <ParallaxLayer factor={0.04} factorY={0.03} className="absolute top-28 left-8 md:left-24 pointer-events-none hidden sm:block">
-          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-[#AEEBDC] text-xs font-semibold text-[#163832] shadow-md">
-            <Brain className="w-3.5 h-3.5 text-[#163832]" />
-            <span>AI & Deep Learning</span>
-          </div>
-        </ParallaxLayer>
 
-        <ParallaxLayer factor={-0.05} factorY={-0.04} className="absolute bottom-28 left-12 md:left-32 pointer-events-none hidden md:block">
-          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-[#FCEF91] text-xs font-semibold text-[#163832] shadow-md">
-            <Code2 className="w-3.5 h-3.5 text-[#163832]" />
-            <span>Accessible Systems</span>
-          </div>
-        </ParallaxLayer>
 
         {/* Main Content Container */}
         <div className="container mx-auto px-6 py-12 md:flex md:items-center relative z-10">
