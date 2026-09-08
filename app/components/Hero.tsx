@@ -94,9 +94,9 @@ export default function Hero() {
                 <Image
                   src="/hero-photo.jpg"
                   alt="Angela Emile Jose"
-                  width={380}
-                  height={380}
-                  className="rounded-xl object-cover shadow-inner"
+                  width={360}
+                  height={480}
+                  className="rounded-xl object-cover shadow-inner w-auto max-h-[460px] sm:max-h-[500px]"
                   priority
                 />
               </div>
