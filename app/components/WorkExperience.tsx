@@ -59,6 +59,17 @@ export default function WorkExperience() {
         "Identified key patterns in omics data and implemented efficient computational methods to support research objectives",
       ],
     },
+    {
+      title: "Research Assistant Intern, AI Department",
+      company: "ThinkPalm Technologies Pvt. Ltd",
+      location: "Kerala, India",
+      period: "Apr 2024 - May 2024",
+      duration: "2 mos",
+      type: "Internship",
+      description: [
+        "Built automated visual recognition capabilities by implementing object detection and image classification algorithms across small-scale AI projects.",
+      ],
+    },
   ]
 
   return (
