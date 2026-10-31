@@ -73,7 +73,7 @@ Reverse-chronological timeline of industry engineering and academic research rol
 All projects share a unified two-column responsive grid layout:
 - **GANNoiseRemover-NoiseFilter**: Generative adversarial network for real-time sensor image de-noising.
 - **ReportRAG**: Intelligent RAG system analyzing company annual reports and financial statements with Llama 3.
-- **Fire Detection: Is YOLO Still Needed?**: Comparative ablation study on multimodal context models vs. YOLO11 on 1,600 curated images, demonstrating CLIP caption matching superiority over standalone detectors. Published at KIT 2026 and officially copyright-registered.
+- **Fire Detection: Is YOLO Still Needed?**: Comparative ablation study on multimodal context models vs. YOLO11 on 1,600 curated images, demonstrating CLIP caption matching superiority over standalone detectors.
 - **K-Context Translator**: Culturally-aware context translator bridging English and Korean idioms and formalities.
 - **KNU Link — Anonymous Social Discovery App**: Safe, anonymous social discovery and community platform for university students.
 - **NutriFlow AI**: Vision-based dietary logging and nutritional intelligence pipeline.

@@ -59,16 +59,6 @@ const projects: Project[] = [
     image: "/fire-detection-architecture.png",
     imageFit: "contain",
     tags: ["YOLO11", "CLIP ViT-B/32", "InternVL 2.5-4B"],
-    award: "Bronze / Excellent Paper Award (동상) · 2026 KIT Summer Comprehensive Academic Conference (제 26-178 호)",
-    links: {
-      github: "https://github.com/soh214/fireDetection",
-      paper: "/fire-detection-research-paper.pdf",
-      paperLabel: "Research Paper",
-      certificate: "/fire-detection-certificate.pdf",
-      certificateLabel: "Certificate",
-      copyrightCertificate: "/fire-detection-copyright-certificate.pdf",
-      copyrightCertificateLabel: "Copyright Registration Certificate",
-    },
   },
   {
     title: "K-Context Translator",
