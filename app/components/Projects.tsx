@@ -13,6 +13,7 @@ interface Project {
   imageFit?: "cover" | "contain"
   tags: string[]
   award?: string
+  status?: string
   links?: {
     github?: string
     demo?: string
@@ -49,6 +50,20 @@ const projects: Project[] = [
     tags: ["Python", "FastAPI", "LangChain", "Groq API", "FAISS"],
     links: {
       github: "https://github.com/AngelaEmileJose/rag-company-report-analyzer",
+    },
+  },
+  {
+    title: "Nadakkaam: Peer-Led Walking Circles for Middle-Aged Homemaker Mothers",
+    date: "Oct 2026",
+    description:
+      "Nadakkaam (\"let's walk\" in Malayalam) is a community health initiative designed to reduce isolation, improve mental well-being, and encourage physical activity among middle-aged homemaker mothers (ages 40–75) in Kochi. Operating across five neighbourhood clusters, the programme connects women in peer-led walking circles three to five times a week, complemented by monthly wellness conversations on stress, sleep, and health with professional support linkages. To foster lasting habits, participants earn a pair of walking sneakers after completing 21 days of brisk walking with their circle. Currently in the process of being funded for implementation.",
+    image: "/nadakkaam-walking-circles.jpg",
+    tags: ["Community Health", "Mental Well-Being", "Behavioral Health", "Peer Support", "Women's Empowerment"],
+    award: "1st Place · V-Guard Industries \"She Leads\" Women's Conclave Project Proposal Competition (Oct 2026)",
+    status: "In the process of being funded for implementation",
+    links: {
+      paper: "/nadakkaam-project-proposal.pdf",
+      paperLabel: "Project Proposal",
     },
   },
   {
@@ -176,6 +191,14 @@ export default function Projects() {
                       <div className="mb-4 p-3 rounded-xl bg-gradient-to-r from-[#FCEF91]/40 via-[#AEEBDC]/30 to-[#FCEF91]/40 border border-[#FCEF91] text-xs text-[#163832] flex items-center gap-2.5">
                         <Award className="w-4 h-4 flex-shrink-0 text-[#163832]" />
                         <span className="font-bold">{project.award}</span>
+                      </div>
+                    )}
+
+                    {/* Current Status (if applicable) */}
+                    {project.status && (
+                      <div className="mb-4 px-3 py-2 rounded-xl bg-[#AEEBDC]/30 border border-[#AEEBDC] text-xs font-medium text-[#163832] flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-[#0E5C4E] animate-pulse flex-shrink-0" />
+                        <span><strong className="font-bold text-[#0E5C4E]">Current Status:</strong> {project.status}</span>
                       </div>
                     )}
                   </div>

@@ -73,6 +73,7 @@ Reverse-chronological timeline of industry engineering and academic research rol
 All projects share a unified two-column responsive grid layout:
 - **GANNoiseRemover-NoiseFilter**: Generative adversarial network for real-time sensor image de-noising.
 - **ReportRAG**: Intelligent RAG system analyzing company annual reports and financial statements with Llama 3.
+- **Nadakkaam: Peer-Led Walking Circles for Middle-Aged Homemaker Mothers**: 1st Place award-winning community health proposal fostering physical activity, mental well-being, and social connection among mothers in Kochi. Currently in implementation funding.
 - **Fire Detection: Is YOLO Still Needed?**: Comparative ablation study on multimodal context models vs. YOLO11 on 1,600 curated images, demonstrating CLIP caption matching superiority over standalone detectors.
 - **K-Context Translator**: Culturally-aware context translator bridging English and Korean idioms and formalities.
 - **KNU Link — Anonymous Social Discovery App**: Safe, anonymous social discovery and community platform for university students.
