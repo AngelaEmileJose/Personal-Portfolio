@@ -71,12 +71,12 @@ Reverse-chronological timeline of industry engineering and academic research rol
 
 ### 4. Selected Projects (`app/components/Projects.tsx`)
 All projects share a unified two-column responsive grid layout:
-- **Hybrid Fire Detection System (YOLO11 + CLIP)**: Bronze Medal award-winning multimodal computer vision system combining real-time spatial detection with zero-shot semantic verification. Published at KIISE KSC 2025 and officially copyright-registered.
 - **GANNoiseRemover-NoiseFilter**: Generative adversarial network for real-time sensor image de-noising.
+- **ReportRAG**: Intelligent RAG system analyzing company annual reports and financial statements with Llama 3.
+- **Hybrid Fire Detection System (YOLO11 + CLIP)**: Bronze Medal award-winning multimodal computer vision system combining real-time spatial detection with zero-shot semantic verification. Published at KIISE KSC 2025 and officially copyright-registered.
 - **K-Context Translator**: Culturally-aware context translator bridging English and Korean idioms and formalities.
 - **KNU Link — Anonymous Social Discovery App**: Safe, anonymous social discovery and community platform for university students.
 - **NutriFlow AI**: Vision-based dietary logging and nutritional intelligence pipeline.
-- **ReportRAG**: Retrieval-Augmented Generation engine for synthesizing unstructured technical documentation.
 
 ### 5. Hobbies & Life Highlights (`app/components/Hobbies.tsx`)
 - **Writing & Journalism**: Feature article *"Making Friends in Korea as a Foreign Student"* in the Spring 2026 KNU Times (Issue 401). Includes in-browser PDF download and link to KNU Press Center.

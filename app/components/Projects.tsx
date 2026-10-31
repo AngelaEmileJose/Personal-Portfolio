@@ -37,7 +37,18 @@ const projects: Project[] = [
     links: {
       github: "https://github.com/GANNoiseRemover/NoiseFilter",
       paper: "/gan-noise-remover-research-paper.pdf",
-      certificate: "/kics-grand-prize-certificate.pdf",
+      certificate: "/kics-grand-prize-certificate.png",
+    },
+  },
+  {
+    title: "ReportRAG",
+    date: "2025",
+    description:
+      "Intelligent RAG (Retrieval-Augmented Generation) system that analyzes company annual reports and financial statements. Transforms 100-page documents into actionable insights in seconds with precise, cited answers powered by Llama 3.",
+    image: "/report-analyzer-screenshot.png",
+    tags: ["Python", "FastAPI", "LangChain", "Groq API", "FAISS"],
+    links: {
+      github: "https://github.com/AngelaEmileJose/rag-company-report-analyzer",
     },
   },
   {
@@ -92,17 +103,6 @@ const projects: Project[] = [
     tags: ["Qwen-VL-Plus", "LangGraph", "Computer Vision", "Nutrition Analysis"],
     links: {
       github: "https://github.com/HCI-Team4/AI-Nutrition-Tracker",
-    },
-  },
-  {
-    title: "ReportRAG",
-    date: "2025",
-    description:
-      "Intelligent RAG (Retrieval-Augmented Generation) system that analyzes company annual reports and financial statements. Transforms 100-page documents into actionable insights in seconds with precise, cited answers powered by Llama 3.",
-    image: "/report-analyzer-screenshot.png",
-    tags: ["Python", "FastAPI", "LangChain", "Groq API", "FAISS", "Llama 3-70B"],
-    links: {
-      github: "https://github.com/AngelaEmileJose/rag-company-report-analyzer",
     },
   },
 ]
