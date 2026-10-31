@@ -52,13 +52,13 @@ const projects: Project[] = [
     },
   },
   {
-    title: "Hybrid Fire Detection System (YOLO11 + CLIP)",
-    date: "2026",
+    title: "Fire Detection: Is YOLO Still Needed?",
+    date: "Mar 2026 – May 2026",
     description:
-      "This project introduces a hybrid fire detection system that integrates YOLO11 for visual object detection with the CLIP multimodal model to understand scene context and minimize false alarms. By effectively reducing critical false negatives and achieving an optimal F2-score, the system's development led to an award-winning conference paper and a registered software copyright.",
+      "Investigated whether standalone real-time detectors like YOLO11 remain optimal for fire detection when compared against multimodal context models. By designing an ablation study on 1,600 hand-curated images featuring 8 look-alike categories, the evaluation demonstrated that CLIP caption matching significantly outperforms YOLO alone (peak F₂-score 0.826 vs. 0.510). While the hybrid YOLO+CLIP approach yielded a slight increase to 0.833, rigorous statistical analysis showed the marginal gain was unproven for variance.",
     image: "/fire-detection-architecture.png",
     imageFit: "contain",
-    tags: ["YOLO11", "CLIP ViT-B/32", "InternVL 2.5-4B", "Gemini 3 Flash", "Multimodal VQA", "F2-Score: 0.833"],
+    tags: ["YOLO11", "CLIP ViT-B/32", "InternVL 2.5-4B"],
     award: "Bronze / Excellent Paper Award (동상) · 2026 KIT Summer Comprehensive Academic Conference (제 26-178 호)",
     links: {
       github: "https://github.com/soh214/fireDetection",
