@@ -103,10 +103,14 @@ export function ParallaxLayer({
 }: ParallaxLayerProps) {
   const context = useContext(ParallaxContext)
   const fy = factorY !== undefined ? factorY : factor
+  const dummyMotionValue = useMotionValue(0)
 
-  const x = context ? useTransform(context.springX, (val) => val * factor) : 0
-  const y = context ? useTransform(context.springY, (val) => val * fy) : 0
-  const rotate = context && rotateFactor ? useTransform(context.springX, (val) => val * rotateFactor) : 0
+  const activeSpringX = context?.springX ?? dummyMotionValue
+  const activeSpringY = context?.springY ?? dummyMotionValue
+
+  const x = useTransform(activeSpringX, (val) => (context ? val * factor : 0))
+  const y = useTransform(activeSpringY, (val) => (context ? val * fy : 0))
+  const rotate = useTransform(activeSpringX, (val) => (context && rotateFactor ? val * rotateFactor : 0))
 
   return (
     <motion.div style={{ x, y, rotate }} className={className}>
