@@ -706,10 +706,7 @@ export default function HealthLLMAuditPage() {
                     <strong>Differing environments:</strong> Claude was queried through the web app and the other two models through an API, so settings and system prompts differ.
                   </div>
                   <div className="p-4 rounded-xl bg-card border border-border/80">
-                    <strong>Scorer judgement:</strong> Scoring involves judgement even when blinded.
-                    <span className="inline-block mt-2 px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-400 font-mono text-xs block">
-                      [TODO: State who scored the responses; the repo mentions a clinician sample]
-                    </span>
+                    <strong>Scorer judgement:</strong> Scoring involves judgement even when blinded. I designed the rubric and scored all 156 responses myself (blinded and shuffled), so there is one scorer and no measure of agreement between raters.
                   </div>
                   <div className="p-4 rounded-xl bg-card border border-border/80">
                     <strong>Proxy metric:</strong> It measures response quality, not real-world harm, and results can change as models update.
