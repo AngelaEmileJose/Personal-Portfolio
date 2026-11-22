@@ -26,9 +26,9 @@ export default function ResearchStatementPage() {
 
           {/* Header */}
           <div className="mb-12 border-b border-border/80 pb-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent font-mono text-xs font-semibold mb-4">
-              <BookOpen className="w-3.5 h-3.5" />
-              <span>MIT Media Lab · Social Algorithms Group Application</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/15 border border-accent/30 text-foreground font-mono text-xs font-semibold mb-4">
+              <BookOpen className="w-3.5 h-3.5 text-[#D6427D]" />
+              <span>Social Algorithms Group · Research Application</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl font-serif font-bold text-foreground tracking-tight leading-tight mb-4">

@@ -12,9 +12,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ["var(--font-newsreader)", "Georgia", "serif"],
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        mono: ["var(--font-mono)", "JetBrains Mono", "monospace"],
+        sans: ["var(--font-roboto)", "system-ui", "sans-serif"],
+        serif: ["var(--font-roboto-slab)", "Georgia", "serif"],
+        slab: ["var(--font-roboto-slab)", "Georgia", "serif"],
+        mono: ["var(--font-roboto-condensed)", "monospace"],
+        condensed: ["var(--font-roboto-condensed)", "sans-serif"],
         malayalam: ["var(--font-malayalam)", "sans-serif"],
       },
       colors: {
@@ -52,36 +54,33 @@ module.exports = {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
-        // Saffron / Coral accent tokens
-        saffron: {
-          50: "#fff5f0",
-          100: "#ffe8df",
-          200: "#ffd1c0",
-          300: "#ffb299",
-          400: "#f78465",
-          500: "#d9532f", // Core signature accent
-          600: "#c84523",
-          700: "#a63417",
-          800: "#852a15",
-          900: "#6d2615",
+        // Three Core Palette Colors
+        cream: {
+          DEFAULT: "#F2F0EA", // Primary Background
+          100: "#FAF9F6",
+          200: "#F2F0EA",
+          300: "#E5E2D8",
+          400: "#D6D1C4",
         },
-        // Warm ink tokens
+        pink: {
+          DEFAULT: "#FF78AC", // Primary Accent: highlights, buttons, active states, key tags
+          soft: "#FFEBF3",
+          light: "#FFA3C5",
+          hover: "#F2639B",
+          dark: "#D6427D",
+        },
+        teal: {
+          DEFAULT: "#A8D5E3", // Secondary Accent / Surface: cards, borders, secondary highlights
+          soft: "#EDF7FA",
+          light: "#C5E5EE",
+          border: "#8EC5D6",
+          dark: "#2A687A",
+        },
         ink: {
-          50: "#f6f6f7",
-          100: "#e5e6e8",
-          200: "#cbced2",
-          300: "#a6abb3",
-          400: "#79808c",
-          500: "#5b626e",
-          600: "#494e59",
-          700: "#3d414a",
-          800: "#22252a",
-          900: "#121417", // Core near-black ink
-          950: "#0b0c0e",
+          DEFAULT: "#1E2328",
+          muted: "#4A525D",
+          deep: "#111417",
         },
-        // Preserved legacy tokens for non-breaking style continuity
-        babyYellow: "#FCEF91",
-        babyTurquoise: "#AEEBDC",
       },
       borderRadius: {
         lg: "var(--radius)",

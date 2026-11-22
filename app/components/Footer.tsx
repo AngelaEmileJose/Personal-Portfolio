@@ -42,7 +42,7 @@ export default function Footer() {
 
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-muted-foreground">
           <p>
-            &copy; {new Date().getFullYear()} Angela Emile Jose. MIT Media Lab Applicant Portfolio.
+            &copy; {new Date().getFullYear()} Angela Emile Jose. All rights reserved.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-6">

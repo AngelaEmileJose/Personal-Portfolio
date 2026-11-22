@@ -82,11 +82,6 @@ export default function WorkExperience() {
       org: "Christ University (2022 batch)",
       desc: "1 of 15 students selected across all departments of the Kengeri campus; relayed student feedback to administration and faculty and supported council events.",
     },
-    {
-      role: "Self-Funded Scholar",
-      org: "Dual Degree in Korea",
-      desc: "Self-funded my studies in Korea through lab research and international-student mentoring while completing a dual degree.",
-    },
   ]
 
   // Presentations from Section 12
@@ -114,7 +109,7 @@ export default function WorkExperience() {
     },
     {
       title: "Languages",
-      content: "English (IELTS Band 8, Nov 2026), Malayalam (native)",
+      content: "English (IELTS Band 8), Malayalam (native), Korean (A2 level), and German (A1 level)",
     },
   ]
 

@@ -26,12 +26,9 @@ export default function Header() {
         {/* Brand/Monogram */}
         <Link
           href="/"
-          className="group flex items-center gap-2 text-foreground font-serif text-lg tracking-tight hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent/40 rounded-md px-1"
+          className="group flex items-center gap-2 text-foreground font-serif text-lg tracking-tight hover:text-[#D6427D] transition-colors focus:outline-none focus:ring-2 focus:ring-accent/40 rounded-md px-1"
         >
           <span className="font-bold">Angela Emile Jose</span>
-          <span className="text-accent text-xs font-mono font-medium hidden sm:inline-block px-2 py-0.5 rounded-full bg-accent/10 border border-accent/20">
-            MIT Media Lab Applicant
-          </span>
         </Link>
 
         {/* Desktop Navigation */}

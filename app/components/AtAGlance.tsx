@@ -57,18 +57,13 @@ export default function AtAGlance() {
   return (
     <section className="py-14 bg-background border-b border-border/70 relative">
       <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-        <div className="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
-          <div>
-            <span className="font-mono text-xs uppercase tracking-wider text-accent font-semibold">
-              Evidence at a glance
-            </span>
-            <h2 className="text-2xl font-serif font-bold text-foreground mt-1">
-              Real numbers, no approximations
-            </h2>
-          </div>
-          <p className="text-xs font-mono text-muted-foreground">
-            Tap or hover any number to inspect methodology and limitations
-          </p>
+        <div className="mb-6">
+          <span className="font-mono text-xs uppercase tracking-wider text-[#D6427D] font-semibold">
+            Evidence at a glance
+          </span>
+          <h2 className="text-2xl font-serif font-bold text-foreground mt-1">
+            Real numbers, no approximations
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">

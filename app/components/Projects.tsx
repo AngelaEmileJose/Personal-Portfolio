@@ -37,8 +37,7 @@ export default function Projects() {
     {
       id: "health-llm-audit",
       category: "Audit & Safety" as FilterCategory,
-      tag: "Featured · Audit & Safety · Nov 2026",
-      isFeatured: true,
+      tag: "Audit & Safety · Nov 2026",
       title: "Health LLM Audit: Malayalam & Manglish",
       oneLiner: "Do AI models answer health questions worse when you ask them the way you actually type?",
       summary:
@@ -287,11 +286,6 @@ export default function Projects() {
                       className={project.imageFit === "contain" ? "object-contain" : "object-cover"}
                       sizes="(max-width: 1024px) 100vw, 400px"
                     />
-                    {project.isFeatured && (
-                      <div className="absolute top-3 left-3 bg-accent text-white text-[11px] font-mono px-3 py-1 rounded-full shadow font-semibold">
-                        Featured Audit
-                      </div>
-                    )}
                   </div>
 
                   {/* Tech stack pills */}

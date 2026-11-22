@@ -40,7 +40,7 @@ export default function VantaHeroBackground() {
       try {
         const NetEffect = NET.default || NET
 
-        // Saffron coral accent + warm off-white / near-black ink
+        // Pink accent + Cream background + Teal atmosphere
         effectRef.current = NetEffect({
           el: vantaRef.current,
           THREE: THREE,
@@ -51,8 +51,8 @@ export default function VantaHeroBackground() {
           minWidth: 200.0,
           scale: 1.0,
           scaleMobile: 1.0,
-          color: 0xd9532f, // Saffron / Coral accent
-          backgroundColor: 0xfbf9f5, // Warm off-white
+          color: 0xff78ac, // Pink (#FF78AC) primary accent
+          backgroundColor: 0xf2f0ea, // Cream (#F2F0EA) primary background
           points: 7.0, // Low density so text is effortlessly readable
           maxDistance: 22.0,
           spacing: 19.0,
@@ -101,13 +101,13 @@ export default function VantaHeroBackground() {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
       {/* Dynamic Vanta canvas target */}
-      <div ref={vantaRef} className="absolute inset-0 w-full h-full opacity-40 dark:opacity-20" />
+      <div ref={vantaRef} className="absolute inset-0 w-full h-full opacity-45 dark:opacity-25" />
 
-      {/* Static refined atmospheric fallback mesh & gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-background/90" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,83,47,0.12),rgba(255,255,255,0))]" />
-      <div className="absolute top-1/4 left-10 w-80 h-80 rounded-full bg-accent/5 blur-3xl" />
-      <div className="absolute bottom-1/4 right-10 w-96 h-96 rounded-full bg-accent/5 blur-3xl" />
+      {/* Static refined atmospheric fallback mesh & gradient in Pink and Teal */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#A8D5E3]/15 via-transparent to-background/90" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,120,172,0.14),rgba(242,240,234,0))]" />
+      <div className="absolute top-1/4 left-10 w-80 h-80 rounded-full bg-[#A8D5E3]/20 blur-3xl" />
+      <div className="absolute bottom-1/4 right-10 w-96 h-96 rounded-full bg-[#FF78AC]/15 blur-3xl" />
     </div>
   )
 }

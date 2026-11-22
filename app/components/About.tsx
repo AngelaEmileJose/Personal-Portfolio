@@ -71,7 +71,7 @@ export default function About() {
               My work follows one habit: ask how we would know a system is wrong, then build the evidence. I audit language models, verify what they produce, and design with the communities affected. I also like making things people can taste and share, which is why I co-founded a small food venture with my mother and still write about food and life in Korea.
             </p>
             <div className="p-4 rounded-xl bg-card border border-border/80 font-mono text-xs text-muted-foreground">
-              <strong className="text-foreground">Languages:</strong> I speak English (IELTS Band 8) and Malayalam (native).
+              <strong className="text-foreground">Languages:</strong> I speak English (IELTS Band 8), Malayalam (native), Korean (A2 level), and German (A1 level).
             </div>
           </div>
         </div>

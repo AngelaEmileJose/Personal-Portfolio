@@ -4,71 +4,71 @@
 
 @layer base {
   :root {
-    /* Warm off-white background & near-black ink */
-    --background: 40 33% 98%; /* #FBF9F5 */
-    --foreground: 220 15% 10%; /* #14171A */
+    /* 1. Cream (#F2F0EA): Primary background colour */
+    --background: 45 20% 93.3%; /* #F2F0EA */
+    --foreground: 210 14% 14%; /* #1E2328 Deep Ink for strong contrast */
 
-    --card: 40 25% 99%; /* #FCFBF9 */
-    --card-foreground: 220 15% 10%;
+    /* Card & Surfaces: Clean surface with Teal border accents */
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 210 14% 14%;
 
-    --popover: 40 33% 98%;
-    --popover-foreground: 220 15% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 14% 14%;
 
-    --primary: 220 15% 10%; /* #14171A */
-    --primary-foreground: 40 33% 98%;
+    --primary: 210 14% 14%;
+    --primary-foreground: 45 20% 93.3%;
 
-    --secondary: 40 18% 93%; /* #ECEAE4 */
-    --secondary-foreground: 220 15% 15%;
+    /* 3. Teal (#A8D5E3): Secondary accent/surface colour (cards, borders, secondary highlights) */
+    --secondary: 194 53% 77.5%; /* #A8D5E3 */
+    --secondary-foreground: 210 14% 14%;
 
-    --muted: 40 15% 91%; /* #E8E5DF */
-    --muted-foreground: 220 10% 40%; /* #60666D */
+    --muted: 45 15% 88%;
+    --muted-foreground: 210 10% 36%;
 
-    /* Core Saffron / Coral Accent */
-    --accent: 14 74% 52%; /* #D9532F */
-    --accent-foreground: 0 0% 100%;
-    --accent-soft: 14 85% 96%; /* #FFF4F0 */
+    /* 2. Pink (#FF78AC): Primary accent colour (highlights, buttons, active states, key tags) */
+    --accent: 337 100% 73.5%; /* #FF78AC */
+    --accent-foreground: 210 14% 14%; /* Deep ink on pink for 7.4:1 high contrast */
+    --accent-soft: 337 100% 95%; /* Soft pink tint */
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 40 15% 88%; /* #E2DFD8 */
-    --input: 40 15% 88%;
-    --ring: 14 74% 52%;
+    --border: 194 53% 77.5%; /* #A8D5E3 Teal border */
+    --input: 194 40% 75%;
+    --ring: 337 100% 73.5%; /* Pink focus ring */
 
     --radius: 0.75rem;
   }
 
   .dark {
-    /* Deep near-black ink background */
-    --background: 220 18% 7%; /* #0F1215 */
-    --foreground: 40 20% 95%; /* #F4F2EE */
+    --background: 215 18% 12%; /* #191E24 Deep contrast dark */
+    --foreground: 45 20% 93.3%; /* #F2F0EA Cream text */
 
-    --card: 220 16% 10%; /* #16191D */
-    --card-foreground: 40 20% 95%;
+    --card: 215 18% 15%; /* #20262E */
+    --card-foreground: 45 20% 93.3%;
 
-    --popover: 220 16% 10%;
-    --popover-foreground: 40 20% 95%;
+    --popover: 215 18% 15%;
+    --popover-foreground: 45 20% 93.3%;
 
-    --primary: 40 20% 95%;
-    --primary-foreground: 220 18% 7%;
+    --primary: 45 20% 93.3%;
+    --primary-foreground: 215 18% 12%;
 
-    --secondary: 220 14% 15%; /* #20242A */
-    --secondary-foreground: 40 20% 90%;
+    --secondary: 194 45% 65%; /* Soft teal surface */
+    --secondary-foreground: 215 18% 12%;
 
-    --muted: 220 12% 16%;
-    --muted-foreground: 220 10% 65%; /* #9CA3AF */
+    --muted: 215 15% 20%;
+    --muted-foreground: 194 25% 75%;
 
-    /* Vibrant readable Saffron / Coral for dark mode */
-    --accent: 14 80% 58%; /* #E46644 */
-    --accent-foreground: 0 0% 100%;
-    --accent-soft: 14 40% 16%; /* subtle warm tint */
+    --accent: 337 100% 73.5%; /* #FF78AC Pink */
+    --accent-foreground: 215 18% 12%;
+    --accent-soft: 337 50% 20%;
 
-    --destructive: 0 62% 35%;
+    --destructive: 0 62% 40%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 12% 18%; /* #262B32 */
-    --input: 220 12% 18%;
-    --ring: 14 80% 58%;
+    --border: 194 40% 30%;
+    --input: 194 40% 30%;
+    --ring: 337 100% 73.5%;
   }
 }
 
@@ -77,10 +77,13 @@
     @apply border-border;
   }
   html {
-    scroll-behavior: auto; /* Handled smoothly by Lenis with fallbacks */
+    scroll-behavior: auto;
   }
   body {
-    @apply bg-background text-foreground antialiased selection:bg-accent/20 selection:text-accent font-sans;
+    @apply bg-background text-foreground antialiased selection:bg-accent/30 selection:text-foreground font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
   }
 }
 
@@ -97,12 +100,12 @@
   }
 }
 
-/* Evidence reveal underline */
+/* Evidence reveal underline with Pink accent */
 .evidence-underline {
   text-decoration-line: underline;
   text-decoration-style: dashed;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 4px;
-  text-decoration-color: hsl(var(--accent));
+  text-decoration-color: #FF78AC;
   cursor: help;
 }

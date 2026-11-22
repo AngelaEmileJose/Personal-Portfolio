@@ -91,7 +91,7 @@ export default function Hero() {
           {/* Typographic Column */}
           <div className="lg:col-span-8 space-y-6 max-w-3xl">
             {/* Small mono eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent font-mono text-xs font-semibold tracking-wide">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FF78AC]/15 border border-[#FF78AC]/30 text-foreground font-mono text-xs font-semibold tracking-wide">
               <span>Computer Science (AI/ML) · Christ University × Kyungpook National University</span>
             </div>
 
@@ -100,15 +100,15 @@ export default function Hero() {
               ref={headlineRef}
               className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-foreground tracking-tight leading-[1.12]"
             >
-              I audit and design AI systems for the people they quietly fail.
+              I like making technology that people can trust.
             </h1>
 
             {/* Sub-headline */}
             <p
               ref={sublineRef}
-              className="text-lg sm:text-xl text-muted-foreground leading-relaxed font-sans max-w-2xl"
+              className="text-lg sm:text-xl text-foreground/80 leading-relaxed font-sans max-w-2xl"
             >
-              I evaluate language models in Malayalam, build verification pipelines that catch hallucinations, and co-design community health programmes with the people they are meant to serve.
+              Across hearing aids, fire safety, health chatbots and community programmes, I work on one question: does this actually help the person using it?
             </p>
 
             {/* Hero CTAs with React Bits Magnet */}
@@ -116,7 +116,7 @@ export default function Hero() {
               <Magnet strength={22}>
                 <Link
                   href="/work/health-llm-audit"
-                  className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-accent text-white rounded-full font-sans font-medium hover:bg-accent/90 transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent"
+                  className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-accent text-foreground font-semibold rounded-full font-sans hover:bg-[#F2639B] transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent border border-[#D6427D]/30"
                 >
                   <span>Read the audit</span>
                   <ArrowRight className="w-4 h-4" />
@@ -126,10 +126,10 @@ export default function Hero() {
               <Magnet strength={22}>
                 <Link
                   href="/research-statement"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-secondary text-foreground hover:bg-muted border border-border/80 rounded-full font-sans font-medium transition-all shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-accent/40"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#A8D5E3]/35 text-foreground hover:bg-[#A8D5E3]/60 border border-[#A8D5E3] rounded-full font-sans font-semibold transition-all shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-accent/40"
                 >
                   <span>Research statement</span>
-                  <ArrowRight className="w-4 h-4 text-muted-foreground" />
+                  <ArrowRight className="w-4 h-4 text-foreground/70" />
                 </Link>
               </Magnet>
             </div>
