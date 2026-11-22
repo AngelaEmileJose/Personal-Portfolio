@@ -1,82 +1,128 @@
 "use client"
-import { useEffect } from "react"
-import { motion } from "framer-motion"
+
+import React, { useState } from "react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { motion, AnimatePresence } from "framer-motion"
+import { Menu, X, FileText } from "lucide-react"
 
 export default function Header() {
-  useEffect(() => {
-    const smoothScroll = (e: Event) => {
-      const target = e.target as HTMLAnchorElement
-      if (target.hash) {
-        e.preventDefault()
-        const element = document.querySelector(target.hash)
-        if (element) {
-          element.scrollIntoView({
-            behavior: "smooth",
-          })
-        }
-      }
-    }
+  const pathname = usePathname()
+  const isHome = pathname === "/"
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-    const links = document.querySelectorAll('a[href^="#"]')
-    links.forEach((link) => link.addEventListener("click", smoothScroll))
-
-    return () => {
-      links.forEach((link) => link.removeEventListener("click", smoothScroll))
-    }
-  }, [])
+  const navItems = [
+    { label: "Work", href: isHome ? "#work" : "/#work" },
+    { label: "Research Statement", href: "/research-statement" },
+    { label: "Thinking", href: "/thinking" },
+    { label: "About", href: isHome ? "#about" : "/#about" },
+    { label: "Experience", href: isHome ? "#experience" : "/#experience" },
+    { label: "Contact", href: isHome ? "#contact" : "/#contact" },
+  ]
 
   return (
-    <motion.header
-      className="fixed top-0 left-0 right-0 z-50 bg-[#AEEBDC]/95 backdrop-blur-md text-[#163832] border-b border-[#FCEF91]/80 shadow-sm"
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-    >
-      <nav className="container mx-auto px-3 py-3 md:px-6 md:py-4">
-        <ul className="flex flex-wrap justify-center items-center gap-1.5 md:gap-6 text-xs md:text-base font-medium">
-          <li>
-            <a href="#hero" className="px-3 py-1.5 rounded-full text-[#163832] hover:bg-[#FCEF91]/70 transition-all whitespace-nowrap">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#projects" className="px-3 py-1.5 rounded-full text-[#163832] hover:bg-[#FCEF91]/70 transition-all whitespace-nowrap">
-              Projects
-            </a>
-          </li>
-          <li>
-            <a href="#about" className="px-3 py-1.5 rounded-full text-[#163832] hover:bg-[#FCEF91]/70 transition-all whitespace-nowrap">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#experience" className="px-3 py-1.5 rounded-full text-[#163832] hover:bg-[#FCEF91]/70 transition-all whitespace-nowrap">
-              Experience
-            </a>
-          </li>
-          <li>
-            <a href="#hobbies" className="px-3 py-1.5 rounded-full text-[#163832] hover:bg-[#FCEF91]/70 transition-all whitespace-nowrap">
-              Hobbies
-            </a>
-          </li>
-          <li>
-            <a href="#contact" className="px-3 py-1.5 rounded-full text-[#163832] hover:bg-[#FCEF91]/70 transition-all whitespace-nowrap">
-              Contact
-            </a>
-          </li>
-          <li>
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              download="Angela_Emile_Jose_Resume.pdf"
-              className="px-3.5 py-1.5 md:px-4 md:py-2 bg-[#FCEF91] text-[#163832] rounded-full hover:bg-white transition-colors font-bold shadow-sm border border-[#163832]/10 whitespace-nowrap text-xs md:text-sm"
-            >
-              Resume
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </motion.header>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/85 backdrop-blur-md border-b border-border/80 transition-all duration-300">
+      <div className="container mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        {/* Brand/Monogram */}
+        <Link
+          href="/"
+          className="group flex items-center gap-2 text-foreground font-serif text-lg tracking-tight hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent/40 rounded-md px-1"
+        >
+          <span className="font-bold">Angela Emile Jose</span>
+          <span className="text-accent text-xs font-mono font-medium hidden sm:inline-block px-2 py-0.5 rounded-full bg-accent/10 border border-accent/20">
+            MIT Media Lab Applicant
+          </span>
+        </Link>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+          {navItems.map((item) => {
+            const isActive = pathname === item.href
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
+                  isActive
+                    ? "text-accent bg-accent/10 font-semibold"
+                    : "text-foreground/80 hover:text-foreground hover:bg-muted/60"
+                }`}
+              >
+                {item.label}
+              </Link>
+            )
+          })}
+          <div className="h-4 w-px bg-border/80 mx-2" aria-hidden="true" />
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Angela_Emile_Jose_Resume.pdf"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-accent text-white rounded-full hover:bg-accent/90 transition-all font-mono text-xs font-semibold shadow-sm hover:shadow"
+          >
+            <FileText className="w-3.5 h-3.5" />
+            <span>Résumé</span>
+          </a>
+        </nav>
+
+        {/* Mobile Menu Button */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Angela_Emile_Jose_Resume.pdf"
+            className="inline-flex items-center gap-1 px-3 py-1 bg-accent/10 text-accent border border-accent/20 rounded-full font-mono text-xs font-semibold"
+          >
+            <span>CV</span>
+          </a>
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 rounded-lg text-foreground hover:bg-muted focus:outline-none focus:ring-2 focus:ring-accent/40"
+            aria-label="Toggle navigation menu"
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Drawer */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="lg:hidden border-b border-border bg-card/95 backdrop-blur-xl px-4 py-4 space-y-1 shadow-xl"
+          >
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-3 py-2 rounded-lg text-sm font-medium text-foreground hover:bg-muted/80 transition-colors"
+              >
+                {item.label}
+              </Link>
+            ))}
+            <div className="pt-2 border-t border-border/60">
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Angela_Emile_Jose_Resume.pdf"
+                className="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-accent text-white rounded-xl font-mono text-xs font-semibold shadow-sm"
+              >
+                <FileText className="w-4 h-4" />
+                <span>Download Résumé (PDF)</span>
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   )
 }

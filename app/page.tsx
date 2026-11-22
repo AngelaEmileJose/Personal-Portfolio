@@ -1,5 +1,6 @@
 import Header from "./components/Header"
 import Hero from "./components/Hero"
+import AtAGlance from "./components/AtAGlance"
 import Projects from "./components/Projects"
 import About from "./components/About"
 import WorkExperience from "./components/WorkExperience"
@@ -11,8 +12,9 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" className="flex-1">
         <Hero />
+        <AtAGlance />
         <Projects />
         <About />
         <WorkExperience />

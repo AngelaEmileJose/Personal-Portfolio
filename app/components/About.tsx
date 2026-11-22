@@ -1,86 +1,79 @@
 "use client"
 
+import React from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { ExternalLink, BookOpen, GraduationCap, Globe } from "lucide-react"
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-[#AEEBDC]/25 text-[#163832]">
-      <div className="container mx-auto px-6 max-w-5xl">
-        <motion.h2
-          className="text-3xl sm:text-4xl font-extrabold mb-12 text-center text-[#163832] tracking-tight"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          About Me
-        </motion.h2>
-        <div className="md:flex md:items-center gap-10">
-          <motion.div
-            className="md:w-1/3 mb-8 md:mb-0 flex justify-center"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <div className="p-2.5 rounded-2xl bg-gradient-to-tr from-[#FCEF91] via-white to-[#AEEBDC] shadow-2xl border border-white/60">
-              <Image
-                src="/about-photo.jpg"
-                alt="Angela Emile Jose"
-                width={380}
-                height={380}
-                className="rounded-xl object-cover shadow-inner"
-              />
+    <section id="about" className="py-24 bg-background border-b border-border/70 scroll-mt-16">
+      <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
+        <div className="mb-12">
+          <span className="font-mono text-xs uppercase tracking-wider text-accent font-semibold">
+            Background & Mission
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground tracking-tight mt-1">
+            About me
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+          {/* Photo Column: Preserved Asset with refined styling */}
+          <div className="md:col-span-4 flex flex-col items-center sm:items-start">
+            <div className="relative p-2 rounded-2xl bg-card border border-border/80 shadow-xl overflow-hidden group">
+              <div className="relative w-64 sm:w-72 h-80 rounded-xl overflow-hidden">
+                <Image
+                  src="/about-photo.jpg"
+                  alt="Angela Emile Jose"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 256px, 288px"
+                />
+              </div>
             </div>
-          </motion.div>
-          <motion.div
-            className="md:w-2/3"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <p className="mb-4 font-serif italic text-lg leading-relaxed text-[#163832]/90">
-              I am Angela Emile Jose, a Computer Science graduate bridging formal engineering with human-centered design.
-              Through a 2+2 Double Degree program, I’ve grounded my foundation at Christ University, India, and elevated
-              my senior research at Kyungpook National University, South Korea (graduating August 2026).
-            </p>
-            <p className="mb-4 font-serif italic text-lg leading-relaxed text-[#163832]/90">
-              Moving across borders has taught me that technology, much like language, is fundamentally a medium for
-              connection. Whether engineering AI pipelines across software verification, computational biology, medical
-              imaging, and industrial vision, or helping international peers articulate their ideas at the International
-              Writing Center, my mission remains constant: to democratize the complex and design systems that promote
-              societal equity.
-            </p>
-            <p className="mb-4 font-serif italic text-lg leading-relaxed text-[#163832]/90">
-              While my discipline is rooted in code, my creative impulse lives at the intersection of tangible media and
-              sensory design. A lifelong enthusiast of the culinary arts, my journey from blogging at{" "}
+
+            {/* Side Links */}
+            <div className="mt-6 w-full space-y-2">
+              <span className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground block font-semibold">
+                Writing & Life
+              </span>
               <a
                 href="https://cookwithemile.blogspot.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-[#163832] underline decoration-[#FCEF91] decoration-4 hover:bg-[#FCEF91] px-1 rounded transition-all"
+                className="flex items-center justify-between p-2.5 rounded-lg bg-card border border-border text-xs font-mono text-foreground hover:border-accent transition-colors"
               >
-                Cook with Emile
-              </a>{" "}
-              to exploring cuisines in Korea has shaped how I think about physical, interactive spaces.
-            </p>
-            <p className="font-serif italic text-lg leading-relaxed text-[#163832]/90">
-              My vision is to bridge these dimensions—merging system-level computing with multi-sensory, everyday human
-              experiences to build technologies that bring connection, warmth, and accessibility to public life. Until
-              then, I am documenting my cross-cultural journey in Daegu on{" "}
+                <span>Cook with Emile blog</span>
+                <ExternalLink className="w-3.5 h-3.5 text-accent" />
+              </a>
               <a
                 href="https://m.blog.naver.com/angela_blogs?tab=1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-[#163832] underline decoration-[#FCEF91] decoration-4 hover:bg-[#FCEF91] px-1 rounded transition-all"
+                className="flex items-center justify-between p-2.5 rounded-lg bg-card border border-border text-xs font-mono text-foreground hover:border-accent transition-colors"
               >
-                Naver Blog
-              </a>{" "}
-              and exploring how smart design can elevate human potential.
+                <span>Naver blog (life in Daegu)</span>
+                <ExternalLink className="w-3.5 h-3.5 text-accent" />
+              </a>
+            </div>
+          </div>
+
+          {/* Copy Column: Verbatim from CONTENT.md Section 13 */}
+          <div className="md:col-span-8 space-y-5 font-sans text-base sm:text-lg text-foreground/90 leading-relaxed">
+            <p>
+              I am a Computer Science and Engineering (AI/ML) graduate from Christ University, Bangalore (CGPA 9.55/10, First Class with Distinction), and a B.Eng. in Computer Science graduate from Kyungpook National University in South Korea, through a 2+2 double degree for which I was one of five engineering students selected.
             </p>
-          </motion.div>
+            <p>
+              Moving between Kerala, Bangalore and Daegu taught me that technology works like language: it only helps when it speaks to people in the way they actually live. That is why I am drawn to the places where AI quietly fails people: a health answer in the wrong register, a detector that cannot tell a candle from a fire, a programme designed for women but never with them.
+            </p>
+            <p>
+              My work follows one habit: ask how we would know a system is wrong, then build the evidence. I audit language models, verify what they produce, and design with the communities affected. I also like making things people can taste and share, which is why I co-founded a small food venture with my mother and still write about food and life in Korea.
+            </p>
+            <div className="p-4 rounded-xl bg-card border border-border/80 font-mono text-xs text-muted-foreground">
+              <strong className="text-foreground">Languages:</strong> I speak English (IELTS Band 8) and Malayalam (native).
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,104 +1,194 @@
 "use client"
 
+import React, { useEffect, useRef } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { motion } from "framer-motion"
-import { ParallaxContainer, ParallaxLayer } from "@/components/animations/MouseParallax"
+import { ArrowRight, FileCheck, Award, GraduationCap, CheckCircle2 } from "lucide-react"
+import VantaHeroBackground from "@/components/animations/VantaHeroBackground"
+import Magnet from "@/components/reactbits/Magnet"
+import ScrollVelocity from "@/components/reactbits/ScrollVelocity"
+import { gsap } from "gsap"
+import { SplitText } from "gsap/SplitText"
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(SplitText)
+}
 
 export default function Hero() {
+  const headlineRef = useRef<HTMLHeadingElement>(null)
+  const sublineRef = useRef<HTMLParagraphElement>(null)
+  const ctaRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    // Check reduced motion
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    if (prefersReducedMotion || !headlineRef.current) return
+
+    let split: any = null
+    const ctx = gsap.context(() => {
+      try {
+        split = new SplitText(headlineRef.current, { type: "words,lines", linesClass: "overflow-hidden" })
+        
+        const tl = gsap.timeline({ defaults: { ease: "power3.out" } })
+        
+        // SplitText reveal (lines/words rising from overflow mask)
+        tl.from(split.words, {
+          y: 45,
+          opacity: 0,
+          duration: 0.85,
+          stagger: 0.035,
+        })
+        .from(
+          sublineRef.current,
+          {
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+          },
+          "-=0.4"
+        )
+        .from(
+          ctaRef.current,
+          {
+            opacity: 0,
+            y: 15,
+            duration: 0.45,
+          },
+          "-=0.3"
+        )
+      } catch (e) {
+        // Fallback gracefully if SplitText throws
+        gsap.to(headlineRef.current, { opacity: 1, duration: 0.5 })
+      }
+    })
+
+    return () => {
+      ctx.revert()
+      if (split && typeof split.revert === "function") {
+        split.revert()
+      }
+    }
+  }, [])
+
+  const proofChips = [
+    { text: "1st Prize, She Leads Women’s Conclave 2026 (500 participants)", icon: Award },
+    { text: "1st place among 90 teams, KICS Conference", icon: CheckCircle2 },
+    { text: "CGPA 9.55/10, First Class with Distinction", icon: GraduationCap },
+    { text: "IELTS Band 8", icon: FileCheck },
+  ]
+
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#AEEBDC]/50 via-[#f4fcfa] to-[#FCEF91]/40 text-[#163832] pt-16 overflow-hidden">
-      <ParallaxContainer className="w-full h-full min-h-screen flex items-center justify-center relative">
-        {/* ========================================================================= */}
-        {/* ANIMATION 1: ROBBY LEONARDI MOUSE PARALLAX ENGINE                         */}
-        {/* Multi-layered depth with varying factors (background -> foreground)       */}
-        {/* ========================================================================= */}
+    <section
+      id="hero"
+      className="relative min-h-[92vh] flex flex-col justify-between pt-24 pb-10 overflow-hidden bg-background border-b border-border/60"
+    >
+      {/* Vanta.js interactive subtle background atmosphere */}
+      <VantaHeroBackground />
 
-        {/* 1. Deep Background Layer (factor 0.02) */}
-        <ParallaxLayer factor={0.02} factorY={0.02} className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-10 w-80 h-80 rounded-full bg-[#AEEBDC]/40 blur-3xl" />
-          <div className="absolute bottom-1/4 right-10 w-96 h-96 rounded-full bg-[#FCEF91]/50 blur-3xl" />
-          {/* Geometric grid dots in Baby Turquoise */}
-          <div className="absolute inset-0 bg-[radial-gradient(#AEEBDC_1.5px,transparent_1.5px)] [background-size:32px_32px] opacity-40" />
-        </ParallaxLayer>
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 my-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* Typographic Column */}
+          <div className="lg:col-span-8 space-y-6 max-w-3xl">
+            {/* Small mono eyebrow */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent font-mono text-xs font-semibold tracking-wide">
+              <span>Computer Science (AI/ML) · Christ University × Kyungpook National University</span>
+            </div>
 
-
-
-        {/* Main Content Container */}
-        <div className="container mx-auto px-6 py-12 md:flex md:items-center relative z-10">
-          <motion.div
-            className="md:w-1/2"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <motion.h1
-              className="text-4xl md:text-6xl font-bold mb-4 tracking-tight text-[#163832]"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            {/* Main Headline */}
+            <h1
+              ref={headlineRef}
+              className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-foreground tracking-tight leading-[1.12]"
             >
-              Angela Emile Jose
-            </motion.h1>
+              I audit and design AI systems for the people they quietly fail.
+            </h1>
 
-            <motion.h2
-              className="text-2xl md:text-3xl mb-6 text-[#25534A] font-medium"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            {/* Sub-headline */}
+            <p
+              ref={sublineRef}
+              className="text-lg sm:text-xl text-muted-foreground leading-relaxed font-sans max-w-2xl"
             >
-              Computer Science Researcher & Robotics Engineer (Incoming @ WIM Corp)
-            </motion.h2>
+              I evaluate language models in Malayalam, build verification pipelines that catch hallucinations, and co-design community health programmes with the people they are meant to serve.
+            </p>
 
-            <motion.p
-              className="text-lg mb-8 leading-relaxed text-[#163832]/85 max-w-xl"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            >
-              Designing tangible, human-centered systems at the intersection of code, physical space, and social impact.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
-            >
-              <ParallaxLayer factor={0.07} factorY={0.06} className="inline-block">
-                <a
-                  href="#projects"
-                  className="inline-block bg-[#FCEF91] text-[#163832] px-8 py-3.5 rounded-full font-bold hover:bg-[#AEEBDC] transition-all shadow-md hover:shadow-lg border border-[#163832]/15 transform hover:-translate-y-0.5 active:translate-y-0"
+            {/* Hero CTAs with React Bits Magnet */}
+            <div ref={ctaRef} className="pt-2 flex flex-wrap gap-4 items-center">
+              <Magnet strength={22}>
+                <Link
+                  href="/work/health-llm-audit"
+                  className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-accent text-white rounded-full font-sans font-medium hover:bg-accent/90 transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent"
                 >
-                  Explore My Work
-                </a>
-              </ParallaxLayer>
-            </motion.div>
-          </motion.div>
+                  <span>Read the audit</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </Magnet>
 
-          {/* Foreground Hero Image with Mouse Parallax Depth */}
-          <motion.div
-            className="md:w-1/2 mt-12 md:mt-0 relative flex justify-center"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          >
-            {/* Subject Image Layer (factor 0.05) */}
-            <ParallaxLayer factor={0.05} factorY={0.05} rotateFactor={0.005} className="relative z-10">
-              <div className="relative p-2.5 rounded-2xl bg-gradient-to-tr from-[#AEEBDC] via-white to-[#FCEF91] shadow-2xl border border-white/60">
-                <Image
-                  src="/hero-photo.jpg"
-                  alt="Angela Emile Jose"
-                  width={360}
-                  height={480}
-                  className="rounded-xl object-cover shadow-inner w-auto max-h-[460px] sm:max-h-[500px]"
-                  priority
-                />
+              <Magnet strength={22}>
+                <Link
+                  href="/research-statement"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-secondary text-foreground hover:bg-muted border border-border/80 rounded-full font-sans font-medium transition-all shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-accent/40"
+                >
+                  <span>Research statement</span>
+                  <ArrowRight className="w-4 h-4 text-muted-foreground" />
+                </Link>
+              </Magnet>
+            </div>
+          </div>
+
+          {/* Profile Photo Column: Preserved & Tastefully Styled */}
+          <div className="lg:col-span-4 flex justify-center lg:justify-end">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.25, ease: "easeOut" }}
+              className="relative group"
+            >
+              {/* Refined editorial frame */}
+              <div className="relative p-2 rounded-2xl bg-card border border-border/80 shadow-2xl transition-transform duration-500 group-hover:-translate-y-1">
+                <div className="relative overflow-hidden rounded-xl w-[260px] sm:w-[300px] h-[360px] sm:h-[400px]">
+                  <Image
+                    src="/hero-photo.jpg"
+                    alt="Angela Emile Jose"
+                    fill
+                    sizes="(max-width: 768px) 260px, 300px"
+                    className="object-cover transition-all duration-700 filter group-hover:contrast-105"
+                    priority
+                  />
+                  {/* Subtle duotone gradient overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                </div>
               </div>
-            </ParallaxLayer>
-
-
-          </motion.div>
+              {/* Mono caption badge */}
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-background/95 backdrop-blur-md px-3 py-1 rounded-full border border-border shadow-md font-mono text-[11px] text-muted-foreground">
+                Kochi · Daegu
+              </div>
+            </motion.div>
+          </div>
         </div>
-      </ParallaxContainer>
+      </div>
+
+      {/* Proof Chips Strip with Tasteful React Bits ScrollVelocity / Marquee */}
+      <div className="mt-12 pt-6 border-t border-border/40 w-full relative z-10">
+        <div className="container mx-auto px-4 mb-2">
+          <span className="text-[11px] uppercase tracking-wider font-mono text-muted-foreground font-semibold">
+            Recognitions & Honors
+          </span>
+        </div>
+        <ScrollVelocity baseVelocity={0.6} className="py-2">
+          {proofChips.map((chip, idx) => {
+            const Icon = chip.icon
+            return (
+              <div
+                key={idx}
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card/80 backdrop-blur-sm border border-border/70 text-xs font-mono text-foreground/90 shadow-sm hover:border-accent/50 transition-colors"
+              >
+                <Icon className="w-3.5 h-3.5 text-accent flex-shrink-0" />
+                <span>{chip.text}</span>
+              </div>
+            )
+          })}
+        </ScrollVelocity>
+      </div>
     </section>
   )
 }

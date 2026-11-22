@@ -1,8 +1,10 @@
 "use client"
 
-import { useState } from "react"
-import { X, ExternalLink, Download, BookOpen } from "lucide-react"
-import { motion } from "framer-motion"
+import React, { useState } from "react"
+import { X, ExternalLink, Download, BookOpen, Camera, Film, Heart } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
+import SpotlightCard from "@/components/reactbits/SpotlightCard"
 
 interface HobbyGallery {
   title: string
@@ -130,9 +132,7 @@ A huge thank you to the KNU Office of International Affairs for this recognition
       pdfUrl: "/knu-times-making-friends-in-korea.pdf",
     },
     gallery: {
-      images: [
-        "/knu-times-cover.jpg",
-      ],
+      images: ["/knu-times-cover.jpg"],
     },
   },
 ]
@@ -142,73 +142,78 @@ function GalleryModal({ hobby, onClose }: { hobby: HobbyGallery; onClose: () => 
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-        <div className="sticky top-0 bg-white border-b p-4 flex justify-between items-center">
-          <div className="flex-1">
-            <h2 className="text-2xl font-bold text-primary">{hobby.title}</h2>
+    <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+      <div className="bg-card rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-border shadow-2xl">
+        <div className="sticky top-0 bg-card/95 backdrop-blur-md border-b border-border p-4 flex justify-between items-center z-10">
+          <div>
+            <h3 className="text-xl font-serif font-bold text-foreground">{hobby.title}</h3>
             {hobby.award && (
-              <div className="mt-3 text-sm">
-                <p className="font-semibold text-accent">{hobby.award.title}</p>
-                <p className="text-gray-600">
-                  Issued by {hobby.award.issuer} · {hobby.award.date}
-                </p>
+              <div className="mt-1 text-xs font-mono text-accent">
+                {hobby.award.title} · {hobby.award.issuer} ({hobby.award.date})
               </div>
             )}
           </div>
-          <button onClick={onClose} className="p-2 hover:bg-gray-100 rounded-full transition">
-            <X size={24} />
+          <button
+            onClick={onClose}
+            className="p-2 hover:bg-muted rounded-full transition text-foreground"
+            aria-label="Close modal"
+          >
+            <X size={20} />
           </button>
         </div>
 
         {hobby.award && (
-          <div className="bg-[#FCEF91]/20 border-b p-6">
-            <p className="text-[#163832] whitespace-pre-line leading-relaxed">{hobby.award.detailedDescription}</p>
-            <div className="mt-4">
+          <div className="bg-accent/5 border-b border-accent/20 p-6 space-y-3">
+            <p className="text-xs sm:text-sm text-foreground/90 whitespace-pre-line leading-relaxed font-sans">
+              {hobby.award.detailedDescription}
+            </p>
+            <div className="pt-2">
               <a
                 href="https://youtu.be/PO1sgjV5HfQ?si=z6Uk18XfyUc1gKcQ"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-6 py-2.5 bg-[#FCEF91] text-[#163832] rounded-lg hover:bg-[#AEEBDC] transition font-bold shadow-sm border border-[#163832]/10"
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-accent text-white rounded-lg text-xs font-mono font-semibold hover:bg-accent/90 transition shadow-sm"
               >
-                Watch Video on YouTube →
+                <span>Watch Video on YouTube →</span>
               </a>
             </div>
           </div>
         )}
 
         {hobby.blogLink && (
-          <div className="bg-[#AEEBDC]/20 border-b p-6">
-            <p className="text-[#163832] mb-3">Visit my Naver Blog to see more content and updates:</p>
-            <div className="mt-4">
-              <a
-                href={hobby.blogLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-6 py-2.5 bg-[#FCEF91] text-[#163832] rounded-lg hover:bg-[#AEEBDC] transition font-bold shadow-sm border border-[#163832]/10"
-              >
-                Visit Blog →
-              </a>
-            </div>
+          <div className="bg-accent/5 border-b border-accent/20 p-6 space-y-3">
+            <p className="text-sm text-foreground/90 font-sans">
+              Visit my Naver Blog to read about daily life and culinary adventures in Daegu:
+            </p>
+            <a
+              href={hobby.blogLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-accent text-white rounded-lg text-xs font-mono font-semibold hover:bg-accent/90 transition shadow-sm"
+            >
+              <span>Visit Naver Blog →</span>
+            </a>
           </div>
         )}
 
         {hobby.article && (
-          <div className="bg-gradient-to-r from-[#AEEBDC]/20 via-white to-[#FCEF91]/20 border-b p-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FCEF91] text-[#163832] text-xs font-bold mb-3 border border-[#163832]/10">
+          <div className="p-6 border-b border-border bg-muted/20 space-y-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-mono font-bold">
               <BookOpen className="w-3.5 h-3.5" />
-              <span>{hobby.article.publication} · {hobby.article.date}</span>
+              <span>
+                {hobby.article.publication} · {hobby.article.date}
+              </span>
             </div>
-            <h3 className="text-xl font-bold text-[#163832] mb-2">{hobby.article.title}</h3>
-            <p className="text-gray-700 text-sm leading-relaxed mb-4">{hobby.description}</p>
-            <div className="flex flex-wrap gap-3">
+            <h4 className="text-lg font-serif font-bold text-foreground">{hobby.article.title}</h4>
+            <p className="text-xs font-sans text-muted-foreground leading-relaxed">{hobby.description}</p>
+            <div className="flex flex-wrap gap-3 pt-2">
               <a
                 href={hobby.article.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#FCEF91] text-[#163832] rounded-lg hover:bg-[#AEEBDC] transition font-bold text-sm shadow-sm border border-[#163832]/10"
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-accent text-white rounded-lg text-xs font-mono font-semibold hover:bg-accent/90 transition"
               >
-                <ExternalLink className="w-4 h-4" />
+                <ExternalLink className="w-3.5 h-3.5" />
                 <span>Read Online at KNU Press Center →</span>
               </a>
               <a
@@ -216,9 +221,9 @@ function GalleryModal({ hobby, onClose }: { hobby: HobbyGallery; onClose: () => 
                 target="_blank"
                 rel="noopener noreferrer"
                 download="KNU_Times_Making_Friends_In_Korea.pdf"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#AEEBDC] text-[#163832] rounded-lg hover:bg-[#FCEF91] transition font-bold text-sm shadow-sm border border-[#163832]/10"
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-muted text-foreground border border-border rounded-lg text-xs font-mono font-semibold hover:bg-border/60 transition"
               >
-                <Download className="w-4 h-4" />
+                <Download className="w-3.5 h-3.5 text-accent" />
                 <span>Download Article PDF ↓</span>
               </a>
             </div>
@@ -226,24 +231,26 @@ function GalleryModal({ hobby, onClose }: { hobby: HobbyGallery; onClose: () => 
         )}
 
         {hobby.gallery?.images && hobby.gallery.images.length > 0 && (
-          <div className="border-b">
-            <div className="flex">
+          <div className="border-b border-border">
+            <div className="flex font-mono text-xs">
               <button
                 onClick={() => setActiveTab("images")}
-                className={`px-6 py-3 font-semibold transition ${activeTab === "images"
-                  ? "text-primary border-b-2 border-primary"
-                  : "text-gray-600 hover:text-gray-900"
-                  }`}
+                className={`px-5 py-3 font-semibold transition ${
+                  activeTab === "images"
+                    ? "text-accent border-b-2 border-accent bg-accent/5"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
               >
-                Gallery ({hobby.gallery.images.length || 0})
+                Gallery Photos ({hobby.gallery.images.length})
               </button>
               {hobby.gallery?.videos && hobby.gallery.videos.length > 0 && (
                 <button
                   onClick={() => setActiveTab("videos")}
-                  className={`px-6 py-3 font-semibold transition ${activeTab === "videos"
-                    ? "text-primary border-b-2 border-primary"
-                    : "text-gray-600 hover:text-gray-900"
-                    }`}
+                  className={`px-5 py-3 font-semibold transition ${
+                    activeTab === "videos"
+                      ? "text-accent border-b-2 border-accent bg-accent/5"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
                 >
                   Videos ({hobby.gallery.videos.length})
                 </button>
@@ -252,34 +259,24 @@ function GalleryModal({ hobby, onClose }: { hobby: HobbyGallery; onClose: () => 
           </div>
         )}
 
-        {!hobby.gallery?.images && hobby.gallery?.videos && hobby.gallery.videos.length > 0 && (
-          <div className="border-b">
-            <div className="flex">
-              <button className="px-6 py-3 font-semibold text-primary border-b-2 border-primary">
-                Videos ({hobby.gallery.videos.length})
-              </button>
-            </div>
-          </div>
-        )}
-
         <div className="p-6">
           {activeTab === "images" && hobby.gallery?.images && (
-            <div className={hobby.gallery.images.length === 1 ? "max-w-2xl mx-auto" : "grid grid-cols-1 md:grid-cols-2 gap-6"}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
               {hobby.gallery.images.map((image, index) => (
                 <button
                   key={index}
                   onClick={() => setSelectedImage(image)}
-                  className={`group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition cursor-pointer w-full ${hobby.gallery?.images?.length === 1 ? "block" : ""}`}
+                  className="group relative overflow-hidden rounded-xl border border-border/80 shadow-sm aspect-square w-full"
                 >
-                  <img
+                  <Image
                     src={image || "/placeholder.svg"}
-                    alt={`Gallery item ${index + 1}`}
-                    className={`w-full ${hobby.gallery.images.length === 1 ? "h-80 sm:h-96" : "h-64"} object-cover group-hover:scale-105 transition-transform duration-300`}
+                    alt={`Gallery ${index + 1}`}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition flex items-center justify-center">
-                    <span className="text-white opacity-0 group-hover:opacity-100 transition text-lg font-semibold">
-                      Click to enlarge
-                    </span>
+                  <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="text-white text-xs font-mono font-bold">Zoom</span>
                   </div>
                 </button>
               ))}
@@ -289,10 +286,12 @@ function GalleryModal({ hobby, onClose }: { hobby: HobbyGallery; onClose: () => 
           {activeTab === "videos" && hobby.gallery?.videos && (
             <div className="space-y-6">
               {hobby.gallery.videos.map((video, index) => (
-                <div key={index}>
-                  <h3 className="text-lg font-semibold mb-2">{video.title}</h3>
-                  {video.description && <p className="text-gray-600 mb-3">{video.description}</p>}
-                  <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
+                <div key={index} className="space-y-2">
+                  <h4 className="font-serif font-bold text-foreground text-base">{video.title}</h4>
+                  {video.description && (
+                    <p className="text-xs font-sans text-muted-foreground">{video.description}</p>
+                  )}
+                  <div className="aspect-video bg-black/10 rounded-xl overflow-hidden border border-border">
                     <iframe
                       width="100%"
                       height="100%"
@@ -314,21 +313,24 @@ function GalleryModal({ hobby, onClose }: { hobby: HobbyGallery; onClose: () => 
       {/* Lightbox for viewing individual images */}
       {selectedImage && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-black/95 flex items-center justify-center z-50 p-4"
           onClick={() => setSelectedImage(null)}
         >
           <button
             onClick={() => setSelectedImage(null)}
-            className="absolute top-4 right-4 p-2 bg-white rounded-full hover:bg-gray-200 transition z-10"
+            className="absolute top-4 right-4 p-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition z-10"
           >
-            <X size={24} className="text-gray-800" />
+            <X size={24} />
           </button>
-          <img
-            src={selectedImage}
-            alt="Full size view"
-            className="max-w-full max-h-[90vh] object-contain rounded-lg"
-            onClick={(e) => e.stopPropagation()}
-          />
+          <div className="relative max-w-full max-h-[90vh] w-[90vw] h-[80vh]">
+            <Image
+              src={selectedImage}
+              alt="Full size view"
+              fill
+              className="object-contain rounded-lg shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
         </div>
       )}
     </div>
@@ -339,76 +341,58 @@ export default function Hobbies() {
   const [selectedHobby, setSelectedHobby] = useState<HobbyGallery | null>(null)
 
   return (
-    <section id="hobbies" className="py-20 bg-gradient-to-b from-[#FCEF91]/25 via-white to-[#AEEBDC]/25 text-[#163832]">
-      <div className="container mx-auto px-6 max-w-5xl">
-        <motion.h2
-          className="text-3xl sm:text-4xl font-extrabold mb-12 text-center text-[#163832] tracking-tight"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          My Hobbies
-        </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <section id="hobbies" className="py-24 bg-background border-b border-border/70 scroll-mt-16">
+      <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
+        <div className="mb-12">
+          <span className="font-mono text-xs uppercase tracking-wider text-accent font-semibold">
+            Beyond the Terminal
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground tracking-tight mt-1">
+            Hobbies & Life in Korea
+          </h2>
+          <p className="text-sm font-sans text-muted-foreground mt-2 max-w-2xl">
+            Candid moments, food experiments, and cultural storytelling that keep my design grounded in lived human experience.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {hobbies.map((hobby, index) => (
-            <motion.button
+            <SpotlightCard
               key={index}
               onClick={() => setSelectedHobby(hobby)}
-              className="bg-white rounded-2xl shadow-md overflow-hidden group text-left hover:shadow-xl transition cursor-pointer border border-[#AEEBDC] hover:border-[#FCEF91]"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+              className="p-5 flex flex-col justify-between cursor-pointer group bg-card"
             >
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  src={hobby.image || "/placeholder.svg"}
-                  alt={hobby.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
+              <div>
+                <div className="relative rounded-xl overflow-hidden h-48 mb-4 border border-border/70 bg-muted">
+                  <Image
+                    src={hobby.image}
+                    alt={hobby.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 300px"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
+
+                <h3 className="font-serif font-bold text-lg text-foreground mb-1 group-hover:text-accent transition-colors">
+                  {hobby.title}
+                </h3>
+                <p className="text-xs text-muted-foreground line-clamp-3 leading-relaxed">
+                  {hobby.description}
+                </p>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-[#163832]">{hobby.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{hobby.description}</p>
-                {hobby.article && (
-                  <div className="mt-4 flex flex-wrap gap-2" onClick={(e) => e.stopPropagation()}>
-                    <a
-                      href={hobby.article.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs font-bold text-[#163832] inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#FCEF91] hover:bg-[#AEEBDC] rounded-full border border-[#163832]/10 transition shadow-sm"
-                    >
-                      <ExternalLink className="w-3 h-3" />
-                      <span>Read Online Article →</span>
-                    </a>
-                    <a
-                      href={hobby.article.pdfUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      download="KNU_Times_Making_Friends_In_Korea.pdf"
-                      className="text-xs font-bold text-[#163832] inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#AEEBDC] hover:bg-[#FCEF91] rounded-full border border-[#163832]/10 transition shadow-sm"
-                    >
-                      <Download className="w-3 h-3" />
-                      <span>Download PDF ↓</span>
-                    </a>
-                  </div>
-                )}
-                {hobby.blogLink && (
-                  <p className="text-xs font-bold text-[#163832] mt-4 inline-block px-3 py-1 bg-[#FCEF91]/70 rounded-full border border-[#FCEF91]">
-                    Visit Blog →
-                  </p>
-                )}
-                {!hobby.blogLink && !hobby.article && (
-                  <p className="text-xs font-bold text-[#163832] mt-4 inline-block px-3 py-1 bg-[#AEEBDC]/50 rounded-full border border-[#AEEBDC]">
-                    Click to view gallery →
-                  </p>
-                )}
+
+              <div className="mt-4 pt-3 border-t border-border/60 flex items-center justify-between text-xs font-mono">
+                <span className="text-accent font-semibold">
+                  {hobby.blogLink
+                    ? "Visit blog →"
+                    : hobby.article
+                    ? "Read article →"
+                    : "Open gallery →"}
+                </span>
+                <span className="text-muted-foreground">0{index + 1}</span>
               </div>
-            </motion.button>
+            </SpotlightCard>
           ))}
         </div>
       </div>
