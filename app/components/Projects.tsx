@@ -68,6 +68,8 @@ export default function Projects() {
         caseStudy: "/work/nadakkaam",
         paper: "/nadakkaam-project-proposal.pdf",
         paperLabel: "Project Proposal (PDF)",
+        certificate: "/she-leads-certificate.pdf",
+        certificateLabel: "She Leads Certificate (PDF)",
       },
     },
     {
@@ -81,7 +83,7 @@ export default function Projects() {
         "I built a pipeline that uses an LLM to translate program specifications into formal logic, then checks them with the CBMC model checker on 27 Stateflow-derived C programs. Of 334 LLM-generated specifications, 271 (81%) passed across 24 programs, with 9 programs at 100%. The failures matter as much as the passes: incorrect and hallucinated specifications were caught because nothing the model produced was trusted until independently validated.",
       whyItMatters:
         "This is my clearest example of evidenced safety: a system that does not ask you to trust the model, but shows its work.",
-      image: "/fire-detection-dashboard.jpg",
+      image: "/cbmc-verification-lab.jpg",
       tech: ["C", "CBMC", "LLM pipelines", "Python"],
       evidenceKey: "81% of specifications passed",
     },
