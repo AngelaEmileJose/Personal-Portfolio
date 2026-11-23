@@ -117,6 +117,7 @@ Personal-Portfolio/
 ├── app/
 │   ├── components/
 │   │   ├── About.tsx            # Personal narrative & cross-cultural biography
+│   │   ├── AtAGlance.tsx        # High-level verified metrics & evidence strip
 │   │   ├── Contact.tsx          # Dual-region contact details & social links
 │   │   ├── Footer.tsx           # Signature footer with copyright
 │   │   ├── Header.tsx           # Floating navigation bar with smooth scrolling
@@ -124,17 +125,23 @@ Personal-Portfolio/
 │   │   ├── Hobbies.tsx          # Creative galleries, awards, journalism & videos
 │   │   ├── Projects.tsx         # Unified 2-column project showcase cards
 │   │   └── WorkExperience.tsx   # Reverse-chronological career & research timeline
-│   ├── favicon.ico              # Web favicon
+│   ├── research-statement/      # Dedicated research statement page
+│   ├── thinking/                # Research notes on audits & formal verification
+│   ├── work/
+│   │   ├── health-llm-audit/    # Malayalam/Manglish health LLM audit case study
+│   │   └── nadakkaam/           # Community health walking circles case study
 │   ├── globals.css              # Global styles, variables & Tailwind directives
 │   ├── layout.tsx               # Root layout & SEO metadata
 │   └── page.tsx                 # Single-page portfolio entrypoint
 ├── components/
-│   └── animations/
-│       ├── MouseParallax.tsx    # Multi-layered depth parallax engine
-│       ├── ScrollShiftCard.tsx  # Scroll-driven perspective shift container
-│       └── SequentialWindow.tsx # Animated showcase window wrapper
-├── public/                      # Static assets: project architecture diagrams,
-│                                # conference paper PDFs, resume, and photos
+│   ├── animations/              # Parallax, scroll shifts, Vanta & Lenis smooth scroll
+│   ├── reactbits/               # Interactive UI components (SpotlightCard, Magnet, etc.)
+│   ├── ui/                      # Accessible UI primitives and evidence annotations
+│   └── theme-provider.tsx       # Next-themes client provider
+├── data/
+│   └── audit-cases.json         # Structured failure cases for the health LLM audit
+├── public/                      # Static assets: project diagrams, conference PDFs,
+│                                # degree certificates, resume (/resume.pdf), and photos
 ├── styles/                      # Supplementary design stylesheets
 ├── tailwind.config.js           # Custom Tailwind theme tokens & color definitions
 ├── tsconfig.json                # TypeScript compiler configuration
