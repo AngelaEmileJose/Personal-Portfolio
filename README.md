@@ -11,15 +11,18 @@
 
 ## 🌟 Overview
 
-Welcome to the official personal portfolio repository of **Angela Emile Jose**. 
+Welcome to the official personal portfolio repository of **Angela Emile Jose**.
 
-Angela is a Computer Science graduate pursuing research and engineering across South Korea and India through an elite **2+2 Double Degree program** (Christ University, India & Kyungpook National University, South Korea, graduating August 2026). She will be joining **WIM Corp** in Daegu, South Korea, as an **Incoming Robotics Engineer**.
+Angela is a Computer Science & AI/ML graduate (**9.55/10 CGPA**) who combines formal and empirical AI audits, low-cost health prototyping, and community fieldwork to make technology more reliable and accessible for overlooked groups.
+
+- 🎓 **B.Tech in Computer Science and Engineering (AI/ML Specialisation)** — Christ (Deemed to be University), Bangalore, India · Aug 2022 – Jul 2026 · First Class with Distinction
+- 🎓 **B.Eng. in Computer Science** — Kyungpook National University (KNU), Daegu, South Korea · Sep 2024 – Aug 2026 · **2+2 Double Degree (1 of 5 selected)**, awarded Aug 2026
 
 This web application showcases her:
-- 🔬 **AI & Formal Systems Research** (Medical image registration, formal verification with LLMs, multimodal fire detection).
-- 🤖 **Robotics & Vision Systems** (YOLO11, CLIP, model checking, object detection).
-- ✍️ **Journalism & Publications** (KNU Times author, conference papers, copyright-registered AI algorithms).
-- 🎨 **Creative Media & Community Engagement** (Culinary arts, video production awards, cross-cultural student mentorship).
+- 🔍 **AI Audits & Safety** (Malayalam & Manglish health-LLM audit, LLM-assisted formal verification with CBMC).
+- 🩺 **Community & Health Design** (Nadakkaam peer-led walking circles, Behaviour Change Wheel, WHO-5 / PHQ-9 / UCLA-3 evaluation).
+- 🛠️ **Engineering & Prototyping** (Conv-TasNet-GAN hearing aid, YOLO11 + CLIP fire detection, copyright-registered software).
+- 🔬 **Research Experience** (LLM pipelines, formal verification, medical image registration, computational biology).
 
 ---
 
@@ -42,53 +45,43 @@ The portfolio combines clean academic rigor with an approachable, modern pastel 
 ## 🧭 Portfolio Structure & Sections
 
 ### 1. Hero Section (`app/components/Hero.tsx`)
-- High-impact introduction featuring graduation portraiture.
+- High-impact introduction summarising Angela's work on reliable, accessible AI.
 - Dynamic mouse parallax background with glowing pastel ambient orbs and geometric matrix dots.
 - Call-to-action navigation leading seamlessly into selected works.
 
 ### 2. About Me (`app/components/About.tsx`)
-- Four-part personal narrative tracing Angela’s cross-cultural journey from Christ University (India) to Kyungpook National University (South Korea).
-- Bridges formal computing with multi-sensory and tangible design.
-- Direct links to her culinary blog ([Cook with Emile](https://cookwithemile.blogspot.com/)) and Korean campus life blog ([Naver Blog](https://m.blog.naver.com/angela_blogs?tab=1)).
+- Narrative tracing Angela's journey from Christ University (India) to Kyungpook National University (South Korea).
+- Education summary: B.Tech CSE (AI/ML) with a 9.55/10 CGPA, plus the KNU 2+2 Double Degree.
+- Languages: English (IELTS Band 8.0), Malayalam (Native), Korean (A2), German (A1).
 
-### 3. Work Experience (`app/components/WorkExperience.tsx`)
-Reverse-chronological timeline of industry engineering and academic research roles:
-1. **Incoming Robotics Engineer** — *WIM Corp* (Daegu, South Korea · Starting Fall 2026)
-   - Developing and deploying physical robotics systems and intelligent automation.
-2. **Research Intern** — *Software Safety Engineering LAB* (Daegu, South Korea · May 2025 – Feb 2026)
-   - LLMs for formal software verification, translating C specifications into CBMC-verifiable formal logic.
-3. **Mentor** — *International Writing Center* (Daegu, South Korea · Jul 2025 – Jul 2026)
-   - Coaching international university students in academic writing and presentation.
-4. **Research Intern** — *MLFM LAB* (Daegu, South Korea · Nov 2025 – Dec 2025)
-   - Medical image registration for lung diagnostics, achieving a 0.91 correlation coefficient (G-KNU Research Award).
-5. **Research Intern** — *Computational Biology & Bioinformatics Lab (COBI)* (Daegu, South Korea · Sep 2024 – Dec 2024)
-   - Omics data analysis, functional enrichment workflows, and bioinformatics pipeline optimization.
-6. **Research Assistant Intern, AI Department** — *ThinkPalm Technologies Pvt. Ltd* (Kerala, India · Apr 2024 – May 2024)
-   - Computer vision, object detection, and visual recognition algorithms for small-scale AI projects.
+### 3. Research & Engineering Experience (`app/components/WorkExperience.tsx`)
+Reverse-chronological timeline of academic research and engineering roles:
+1. **Research Assistant** — *Software and Safety Engineering Lab, Kyungpook National University* (Daegu, South Korea · May 2025 – Feb 2026)
+   - Independently validated 271 of 334 LLM-generated specifications (81%) across 27 C programs by building a CBMC model-checking pipeline that treats LLM outputs as untrusted until formally verified, catching hallucinations and logic errors.
+2. **Research Intern** — *Machine Learning and Fluid Mechanics Lab, Kyungpook National University* (Daegu, South Korea · Nov 2025 – Dec 2025)
+   - Achieved a 0.91 alignment correlation on multi-modal lung medical images by implementing B-spline and SyN deformable registration workflows using elastix and SimpleITK.
+3. **Research Assistant Intern** — *Computational Biology & Bioinformatics Lab, Kyungpook National University* (Daegu, South Korea · Sep 2024 – Nov 2024)
+   - Automated omics data filtering and functional enrichment across three datasets using Python and R.
+4. **Research Assistant Intern (AI)** — *ThinkPalm Technologies* (India · Apr 2024 – May 2024)
+   - Built computer vision object detection and classification models for logistics automation.
 
-### 4. Selected Projects (`app/components/Projects.tsx`)
+### 4. Research & Prototypes (`app/components/Projects.tsx`)
 All projects share a unified two-column responsive grid layout:
-- **GANNoiseRemover-NoiseFilter**: Generative adversarial network for real-time sensor image de-noising.
-- **ReportRAG**: Intelligent RAG system analyzing company annual reports and financial statements with Llama 3.
-- **Nadakkaam: Peer-Led Walking Circles for Middle-Aged Homemaker Mothers**: 1st Place award-winning community health proposal fostering physical activity, mental well-being, and social connection among mothers in Kochi. Currently in implementation funding.
-- **Fire Detection: Is YOLO Still Needed?**: Comparative ablation study on multimodal context models vs. YOLO11 on 1,600 curated images, demonstrating CLIP caption matching superiority over standalone detectors.
-- **K-Context Translator**: Culturally-aware context translator bridging English and Korean idioms and formalities.
-- **KNU Link — Anonymous Social Discovery App**: Safe, anonymous social discovery and community platform for university students.
-- **NutriFlow AI**: Vision-based dietary logging and nutritional intelligence pipeline.
+- **Health LLM Audit: Malayalam & Manglish** *(Nov 2026)*: Blind-scored 156 outputs across 13 community-sourced health questions against a structured rubric. Manglish (Malayalam in Latin script) was the riskiest of four language variants for two of three LLMs (31% unsafe responses vs. 8–15% in standard English). *Python, Groq API, pandas; rubric and dataset on GitHub.*
+- **Nadakkaam ("Let's Walk"): Peer-Led Walking Circles for Homemaker Women** *(Oct 2026)*: **1st Prize among 500 participants** at She Leads Women's Conclave 2026 (V-Guard Industries CSR), advancing to funding. A 9-month peer-led walking pilot for 100 women (ages 40–75), grounded in surveys with 30 women (27 with no regular activity beyond housework) and the Behaviour Change Wheel. Targets were set up front (70% retention, 50% gaining ≥10 WHO-5 points, INR 3,740/woman); evaluation uses WHO-5, PHQ-9 and UCLA-3 with safeguarding, with claims kept non-causal.
+- **Low-Cost Hearing Aid Prototype (Conv-TasNet-GAN)** *(Sep 2025 – Dec 2025)*: **1st Place of 90 Teams, KICS**, with an industry collaboration with WIM Corp. Improved perceptual speech quality (PESQ) by 31% and intelligibility (STOI) by 14% on held-out audio, delivering a working prototype with a 5-person team under hardware and cost constraints.
+- **Context-Aware Fire Detection (YOLO11 + CLIP)** *(Mar 2026 – May 2026)*: **Excellent Paper Award, KIIT 2026**, and a registered software copyright (JINMYUNG I&C). Raised F2 from 0.510 to 0.826 by adding CLIP scene context; the full YOLO11 + CLIP hybrid reached 0.833 across 1,600 images and 8 scene categories. F2 was chosen to prioritize recall, since a missed fire costs more than a false alarm.
 
-### 5. Hobbies & Life Highlights (`app/components/Hobbies.tsx`)
-- **Writing & Journalism**: Feature article *"Making Friends in Korea as a Foreign Student"* in the Spring 2026 KNU Times (Issue 401). Includes in-browser PDF download and link to KNU Press Center.
-- **Videos & Short Films**: 3rd Prize Award winner at KNU Video Contest for the short film *"The KNU DREAM"*.
-- **Food & Travel**: Culinary experiments across Indian, Korean, Japanese, and Western cuisines.
-- **Sneak Peak Gallery**: Interactive photo album capturing candid life moments with family, friends in Korea, and her pet Booboo.
-- **Naver Blog**: Korean-language essays on life as an international researcher in Daegu.
+### 5. Teaching, Community & Leadership (`app/components/Hobbies.tsx`)
+- **English Mentor, International Writing Center, KNU** *(2025–2026)*: Selected as 1 of 7 mentors; coached 70+ students per semester in academic writing, speaking, and structured debate.
+- **Global Student Ambassador, KNU** *(2024)*: Selected as 1 of 4 ambassadors; supported ~250 international students with orientation and cross-cultural transition.
+- **Peer Educator & Student Council Member, Christ University** *(2022–2024)*: Trained in peer well-being support via Counselling & Health Services; selected as 1 of 15 council representatives in the 2022 cohort.
 
 ### 6. Contact Section (`app/components/Contact.tsx`)
-- Multi-channel contact card with dual-country availability:
+- Contact card with direct links:
   - **Email**: `angelaemilejose@gmail.com`
-  - **Locations**: Daegu, South Korea & India
-  - **Phone Numbers**: South Korea (`+82 010 3937 8830`) & India (`+91 9846469020`)
-  - **Socials**: GitHub and LinkedIn
+  - **Phone**: India (`+91 9846469020`)
+  - **Socials**: LinkedIn, GitHub, and Portfolio
 
 ---
 
@@ -113,15 +106,15 @@ All projects share a unified two-column responsive grid layout:
 Personal-Portfolio/
 ├── app/
 │   ├── components/
-│   │   ├── About.tsx            # Personal narrative & cross-cultural biography
+│   │   ├── About.tsx            # Personal narrative & education
 │   │   ├── AtAGlance.tsx        # High-level verified metrics & evidence strip
-│   │   ├── Contact.tsx          # Dual-region contact details & social links
+│   │   ├── Contact.tsx          # Contact details & social links
 │   │   ├── Footer.tsx           # Signature footer with copyright
 │   │   ├── Header.tsx           # Floating navigation bar with smooth scrolling
 │   │   ├── Hero.tsx             # Interactive mouse parallax hero section
-│   │   ├── Hobbies.tsx          # Creative galleries, awards, journalism & videos
+│   │   ├── Hobbies.tsx          # Teaching, community & leadership
 │   │   ├── Projects.tsx         # Unified 2-column project showcase cards
-│   │   └── WorkExperience.tsx   # Reverse-chronological career & research timeline
+│   │   └── WorkExperience.tsx   # Reverse-chronological research timeline
 │   ├── research-statement/      # Dedicated research statement page
 │   ├── thinking/                # Research notes on audits & formal verification
 │   ├── work/
