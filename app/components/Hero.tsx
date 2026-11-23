@@ -115,16 +115,6 @@ export default function Hero() {
             <div ref={ctaRef} className="pt-2 flex flex-wrap gap-4 items-center">
               <Magnet strength={22}>
                 <Link
-                  href="/work/health-llm-audit"
-                  className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-accent text-foreground font-semibold rounded-full font-sans hover:bg-[#F2639B] transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent border border-[#D6427D]/30"
-                >
-                  <span>Read the audit</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </Magnet>
-
-              <Magnet strength={22}>
-                <Link
                   href="/research-statement"
                   className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#A8D5E3]/35 text-foreground hover:bg-[#A8D5E3]/60 border border-[#A8D5E3] rounded-full font-sans font-semibold transition-all shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-accent/40"
                 >

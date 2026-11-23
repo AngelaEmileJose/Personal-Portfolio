@@ -4,7 +4,7 @@ import React from "react"
 import Link from "next/link"
 import Header from "@/app/components/Header"
 import Footer from "@/app/components/Footer"
-import { ArrowLeft, BookOpen, Quote, Sparkles, ArrowRight } from "lucide-react"
+import { ArrowLeft, Quote, Sparkles, ArrowRight } from "lucide-react"
 
 export default function ResearchStatementPage() {
   return (
@@ -26,11 +26,6 @@ export default function ResearchStatementPage() {
 
           {/* Header */}
           <div className="mb-12 border-b border-border/80 pb-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/15 border border-accent/30 text-foreground font-mono text-xs font-semibold mb-4">
-              <BookOpen className="w-3.5 h-3.5 text-[#D6427D]" />
-              <span>Social Algorithms Group · Research Application</span>
-            </div>
-
             <h1 className="text-4xl sm:text-5xl font-serif font-bold text-foreground tracking-tight leading-tight mb-4">
               Research Statement
             </h1>

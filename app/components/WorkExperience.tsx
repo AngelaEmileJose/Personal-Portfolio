@@ -120,12 +120,16 @@ export default function WorkExperience() {
       degree: "B.Tech in Computer Science and Engineering, AI/ML Specialisation",
       period: "Aug 2022 – Jul 2026",
       grade: "CGPA 9.55/10, First Class with Distinction",
+      certificate: "/christ-university-provisional-degree-certificate.pdf",
+      certificateAriaLabel: "View Christ University provisional degree certificate",
     },
     {
       school: "Kyungpook National University (KNU), South Korea",
       degree: "B.Eng. in Computer Science, 2+2 Double Degree",
       period: "Sept 2024 – Aug 2026",
       grade: "1 of 5 engineering students selected university-wide",
+      certificate: "/knu-degree-certificate.pdf",
+      certificateAriaLabel: "View Kyungpook National University degree certificate",
     },
   ]
 
@@ -302,20 +306,37 @@ export default function WorkExperience() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {education.map((edu, idx) => (
-              <SpotlightCard key={idx} className="p-5 bg-card space-y-2">
-                <div className="flex items-center justify-between text-xs font-mono text-muted-foreground">
-                  <span className="text-accent font-bold">2+2 Double Degree</span>
-                  <span>{edu.period}</span>
+              <SpotlightCard key={idx} className="p-5 bg-card flex flex-col justify-between">
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between text-xs font-mono text-muted-foreground">
+                    <span className="text-accent font-bold">2+2 Double Degree</span>
+                    <span>{edu.period}</span>
+                  </div>
+                  <h3 className="font-serif font-bold text-lg text-foreground">
+                    {edu.school}
+                  </h3>
+                  <p className="font-sans text-xs text-foreground/90">
+                    {edu.degree}
+                  </p>
+                  <div className="pt-2 text-xs font-mono font-semibold text-accent">
+                    {edu.grade}
+                  </div>
                 </div>
-                <h3 className="font-serif font-bold text-lg text-foreground">
-                  {edu.school}
-                </h3>
-                <p className="font-sans text-xs text-foreground/90">
-                  {edu.degree}
-                </p>
-                <div className="pt-2 text-xs font-mono font-semibold text-accent">
-                  {edu.grade}
-                </div>
+
+                {edu.certificate && (
+                  <div className="pt-3 mt-3 border-t border-border/60">
+                    <a
+                      href={edu.certificate}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={edu.certificateAriaLabel}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted text-foreground hover:border-accent border border-border text-xs font-mono font-medium transition"
+                    >
+                      <Award className="w-3.5 h-3.5 text-accent" />
+                      <span>View certificate</span>
+                    </a>
+                  </div>
+                )}
               </SpotlightCard>
             ))}
           </div>
