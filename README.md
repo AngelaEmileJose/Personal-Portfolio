@@ -7,9 +7,6 @@
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-latest-black?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
 [![Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 
-> **Computer Science Researcher & Robotics Engineer (Incoming @ WIM Corp)**  
-> *Designing tangible, human-centered systems at the intersection of code, physical space, and social impact.*
-
 ---
 
 ## 🌟 Overview
