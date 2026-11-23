@@ -75,7 +75,7 @@ export default function ThinkingPage() {
    *   tag: "Participatory Design & Community Health",
    *   title: "Thirty women, one clipboard: lessons from a small community survey",
    *   summary:
-   *     "Field notes from surveying homemaker mothers aged 45–75 in Kerala. Why convenience samples
+   *     "Field notes from surveying homemaker mothers aged 40–75 in Kerala. Why convenience samples
    *     must be stated with strict limits, how conversational trust reveals unaddressed isolation,
    *     and the line between shaping a program and claiming population truth.",
    * },

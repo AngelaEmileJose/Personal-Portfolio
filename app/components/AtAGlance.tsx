@@ -21,7 +21,7 @@ export default function AtAGlance() {
       display: "30",
       isCountable: true,
       label: "women surveyed to shape Nadakkaam",
-      method: "User research interviews with homemaker mothers aged 45–75 in Kerala across neighbourhood networks",
+      method: "User research interviews with homemaker mothers aged 40–75 in Kerala across neighbourhood networks",
       n: "30 women",
       limitation: "Convenience sample from personal network; not representative of the wider population, used to shape design rather than make population claims",
     },

@@ -200,7 +200,7 @@ export default function NadakkaamPage() {
                 </h2>
                 <div className="p-6 rounded-2xl bg-card border border-border/80 space-y-3 font-sans text-foreground/90 leading-relaxed shadow-sm">
                   <p className="text-base sm:text-lg">
-                    I ran user research with 30 women aged 45–75 from my family and neighbourhoods in Kerala. Twenty-seven reported no regular activity beyond housework, and 19 were unhappy about being unable to go out with friends.
+                    I ran user research with 30 women aged 40–75 from my family and neighbourhoods in Kerala. Twenty-seven reported no regular activity beyond housework, and 19 were unhappy about being unable to go out with friends.
                   </p>
                   <p className="text-xs font-mono text-muted-foreground pt-2 border-t border-border/40">
                     *This was an informal sample, used to shape the design and not to make claims about the wider population.

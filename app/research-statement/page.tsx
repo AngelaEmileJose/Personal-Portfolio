@@ -115,7 +115,7 @@ export default function ResearchStatementPage() {
                       Nadakkaam Community Health Walking Circles
                     </h3>
                     <p className="text-xs text-muted-foreground mt-2 line-clamp-2">
-                      Co-designed peer-led habit intervention for homemaker mothers in Kochi, India.
+                      Designed peer-led habit intervention for homemaker mothers in Kochi, India.
                     </p>
                   </div>
                   <div className="mt-4 flex items-center gap-1.5 font-mono text-xs text-accent font-semibold">

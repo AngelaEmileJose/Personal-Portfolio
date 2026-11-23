@@ -94,7 +94,7 @@ export default function Projects() {
       tag: "Engineering · Mar – May 2026 · Capstone Design Project 2",
       title: "Fire Detection: YOLO11 + CLIP Hybrid",
       recognition:
-        "Bronze Prize, KIIT Summer Conference 2026 · Software copyright registered (Korea Copyright Commission) · Collaboration with JINMYUNG I&C",
+        "Excellent Paper Award, KIIT 2026 · Software copyright registered (Korea Copyright Commission) · Collaboration with JINMYUNG I&C",
       summary:
         "I asked whether a standalone real-time detector like YOLO11 is still the right tool for fire detection, compared with models that understand scene context. I ran an ablation on 1,600 hand-curated images across 8 scene types (fire, bonfire, candle, cooking, fireplace, fireworks, cigarette and look-alikes).",
       findingHighlight:
@@ -110,7 +110,7 @@ export default function Projects() {
         paper: "/fire-detection-research-paper.pdf",
         paperLabel: "Research Paper (PDF)",
         certificate: "/fire-detection-certificate.pdf",
-        certificateLabel: "KIIT Bronze Prize Certificate",
+        certificateLabel: "KIIT Excellent Paper Award Certificate",
         copyrightCertificate: "/fire-detection-copyright-certificate.pdf",
         copyrightCertificateLabel: "Software Copyright Certificate",
       },

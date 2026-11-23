@@ -1,6 +1,6 @@
 Angela Emile Jose: Portfolio Website Content
 All text for the portfolio, section by section, ready to paste. Items marked [TODO] need your input; nothing in here is invented beyond your résumé, your current site and this chat. Certificates, images and links you will add yourself are marked [ADD].
-Before publishing, confirm: (1) the WIM status (the résumé says internship offer, the old site said full-time Fall 2026); (2) the fire-detection award (the newer résumé says Bronze Prize, KIIT Summer Conference 2026); (3) the MLFM Lab dates (May–Jun 2026 here).
+Before publishing, confirm: (1) the WIM status (the résumé says internship offer, the old site said full-time Fall 2026); (2) the fire-detection award (Excellent Paper Award, KIIT 2026); (3) the MLFM Lab dates (Nov–Dec 2025).
 1. Site-wide
 Browser title: Angela Emile Jose | Auditing and designing AI for the people it quietly fails
 Meta description: CS (AI/ML) graduate who audits language models in Malayalam, builds verification pipelines that catch hallucinations, and co-designs community health programmes. Kochi, India · Daegu, South Korea.
@@ -99,7 +99,7 @@ Card:
 Case study page
 Role: Project Lead and Designer · Status: In funding stages. The pilot has not yet run, so all figures below are targets, not results.
 The problem, in women’s own words
-I ran user research with 30 women aged 45–75 from my family and neighbourhoods in Kerala. Twenty-seven reported no regular activity beyond housework, and 19 were unhappy about being unable to go out with friends. This was an informal sample, used to shape the design and not to make claims about the wider population.
+I ran user research with 30 women aged 40–75 from my family and neighbourhoods in Kerala. Twenty-seven reported no regular activity beyond housework, and 19 were unhappy about being unable to go out with friends. This was an informal sample, used to shape the design and not to make claims about the wider population.
 Where the idea came from
 On a trip to South Korea and Japan, I saw older people walking together in neighbourhood parks and using outdoor exercise equipment every day, as an ordinary habit. It made me ask why our mothers do not have the same. Nadakkaam adapts that idea to Kerala’s language, climate and social setting rather than copying it.
 The design
@@ -147,7 +147,7 @@ Why it matters here: this is my clearest example of evidenced safety: a system t
 Tech: C · CBMC · LLM pipelines · Python
 7b. Fire Detection: YOLO11 + CLIP Hybrid 
 Tag: Engineering · Mar – May 2026 · Capstone Design Project 2
-Recognition: Bronze Prize, KIIT Summer Conference 2026 · Software copyright registered (Korea Copyright Commission) · Collaboration with JINMYUNG I&C
+Recognition: Excellent Paper Award, KIIT 2026 · Software copyright registered (Korea Copyright Commission) · Collaboration with JINMYUNG I&C
 Summary: I asked whether a standalone real-time detector like YOLO11 is still the right tool for fire detection, compared with models that understand scene context. I ran an ablation on 1,600 hand-curated images across 8 scene types (fire, bonfire, candle, cooking, fireplace, fireworks, cigarette and look-alikes).
 • Raised the F2-score from 0.510 (YOLO11 alone) to 0.833 by pairing YOLO11 fire/smoke detection with CLIP (ViTB/32) validation, using scene captions from the InternVL 2.5-4B VQA model. 
 Model
@@ -183,7 +183,7 @@ Links: Cook with Emile blog
 • KNU Link (Jan 2026): A low-pressure social discovery app that helps students, especially introverts and newcomers, connect through shared activities rather than appearance or status. Next.js · TypeScript · Tailwind · Supabase. Source code · Live app.
 • NutriFlow AI (Nov–Dec 2025): A multimodal nutrition tracker that recognises dishes from photos, fetches nutrition data, and runs a 12-step LangGraph workflow from image upload to saved JSON. Qwen-VL-Plus · LangGraph · Computer vision. Source code.
 11. Experience
-Research Intern, Machine Learning and Fluid Mechanics Lab Kyungpook National University, South Korea · May 2026 – Jun 2026
+Research Intern, Machine Learning and Fluid Mechanics Lab Kyungpook National University, South Korea · Nov–Dec 2025
 • Achieved a 0.91 correlation in multi-modal lung image alignment by building deformable B-spline and SyN registration models with elastix and SimpleITK, plus data fusion and preprocessing.
 • Certificate: G-KNU Glocal Research Stepping-Stone Program existing 
 Research Assistant, Software and Safety Engineering Lab Kyungpook National University, South Korea · May 2025 – Feb 2026
@@ -197,7 +197,7 @@ Research Assistant Intern, AI Department ThinkPalm Technologies, India · Apr 20
 Heading: People first Intro: Technology only works if people can use it, trust it and speak up about it. These are the roles where I practised that.
 • Peer Educator, Christ University (2024): selected and trained through the Centre for Counselling and Health Services (lectures, role plays, weekly mentoring) to educate and support fellow students on wellbeing.
 • Global Student Ambassador, KNU (2024): 1 of 4 selected from the international student body; first point of contact for about 250 global students; helped host International Day and cross-cultural events.
-• English Mentor, International Writing Center, KNU (Jul 2025 – 2026): 1 of 7 mentors, selected for consecutive terms; ran small-group debates and writing exercises with feedback from over 70 students per semester. Video Contest Winner, KNU-OIA.
+• English Mentor, International Writing Center, KNU (Jul 2025 – 2026): 1 of 7 mentors, selected for consecutive terms; mentored 70 students per semester through small-group debates and writing exercises. Video Contest Winner, KNU-OIA.
 • Student Council Member, Christ University (2022 batch): 1 of 15 students selected across all departments of the Kengeri campus; relayed student feedback to administration and faculty and supported council events.
 • Self-funded my studies in Korea through lab research and international-student mentoring while completing a dual degree.
 • Presentations: KICS Conference · KIIT Conference 2026 · She Leads Conclave pitch (500 participants).

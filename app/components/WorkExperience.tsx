@@ -23,7 +23,7 @@ export default function WorkExperience() {
       title: "Research Intern",
       lab: "Machine Learning and Fluid Mechanics Lab",
       institution: "Kyungpook National University, South Korea",
-      period: "May 2026 – Jun 2026", // Flagged in Step 5: May-Jun 2026
+      period: "Nov–Dec 2025",
       bullets: [
         "Achieved a 0.91 correlation in multi-modal lung image alignment by building deformable B-spline and SyN registration models with elastix and SimpleITK, plus data fusion and preprocessing.",
       ],
@@ -75,7 +75,7 @@ export default function WorkExperience() {
     {
       role: "English Mentor",
       org: "International Writing Center, KNU (Jul 2025 – 2026)",
-      desc: "1 of 7 mentors, selected for consecutive terms; ran small-group debates and writing exercises with feedback from over 70 students per semester. Video Contest Winner, KNU-OIA.",
+      desc: "1 of 7 mentors, selected for consecutive terms; mentored 70 students per semester through small-group debates and writing exercises. Video Contest Winner, KNU-OIA.",
     },
     {
       role: "Student Council Member",
@@ -87,7 +87,7 @@ export default function WorkExperience() {
   // Presentations from Section 12
   const presentations = [
     "KICS Fall Conference (Grand Prize, 1st of 90 teams)",
-    "KIIT Summer Conference 2026 (Bronze Prize)",
+    "KIIT 2026 (Excellent Paper Award)",
     "She Leads Conclave pitch (1st Prize among 500 participants)",
   ]
 
